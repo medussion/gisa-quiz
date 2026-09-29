@@ -1,0 +1,30 @@
+[
+  {
+    "id": "user-0001",
+    "sourceType": "user",
+    "sourceLabel": "",
+    "sourceUrls": [],
+    "year": null,
+    "round": null,
+    "category": "programming_language",
+    "subcategory": "Java / 싱글톤 패턴",
+    "questionType": "short_answer",
+    "question": "다음 Java 코드에서 알맞는 출력 값을 작성하시오.",
+    "code": "class Connection {\n    private static Connection _inst = null;\n    private int count = 0;\n    \n    static public Connection get() {\n        if(_inst == null) {\n            _inst = new Connection();\n            return _inst;\n        }\n        return _inst;\n    }    \n    public void count() {\n         count++; \n    }  \n    public int getCount() {\n         return count; \n    }\n}\n\npublic class main {  \n    public static void main(String[] args) { \n        Connection conn1 = Connection.get();\n        conn1.count();\n \n        Connection conn2 = Connection.get();\n        conn2.count();\n \n        Connection conn3 = Connection.get();\n        conn3.count();\n        \n        conn1.count();\n        System.out.print(conn1.getCount());\n    } \n}",
+    "codeLang": "java",
+    "answer": [
+      "4"
+    ],
+    "acceptedAnswers": [],
+    "choices": null,
+    "caseSensitive": false,
+    "orderSensitive": false,
+    "hint": "get()이 매번 새 객체를 만드는지, 이미 만든 객체를 돌려주는지 보세요. conn1·conn2·conn3이 같은 객체라면 count는 따로 셀까요, 같이 셀까요?",
+    "explanation": "[해설]\n\n이 코드는 Singleton(싱글톤) 패턴을 사용한다.\n\nprivate static Connection _inst = null;\n\n_inst가 static으로 선언되어 있기 때문에 Connection 클래스 전체에서 하나만 존재한다.\n\nConnection.get()을 처음 호출하면 _inst가 null이므로 새로운 Connection 객체를 생성한다.\n\nConnection conn1 = Connection.get();\n\n이때 최초 객체가 생성되며 count의 초기값은 0이다.\n\n이후 Connection.get()을 다시 호출하면 이미 _inst에 객체가 존재하므로 새로운 객체를 생성하지 않고 기존 객체를 반환한다.\n\n따라서\n\nconn1\nconn2\nconn3\n\n세 변수는 서로 다른 객체가 아니라 모두 동일한 Connection 객체를 참조한다.\n\n실행 순서:\n\n1. conn1.count(); → count = 1\n2. conn2.count(); → count = 2\n3. conn3.count(); → count = 3\n4. conn1.count(); → count = 4\n\nconn1, conn2, conn3가 모두 같은 객체를 참조하므로 count 값도 공유된다.\n\n따라서\n\nSystem.out.print(conn1.getCount());\n\n의 출력 결과는\n\n4\n\n이다.\n\n[핵심]\nstatic 객체 + get()에서 객체를 한 번만 생성\n→ Singleton 패턴\n→ conn1, conn2, conn3 모두 같은 객체\n→ count가 각각 따로 존재하는 것이 아니라 하나의 count를 공유",
+    "difficulty": 2,
+    "verificationStatus": "unverified",
+    "basedOn": null,
+    "active": true,
+    "verificationCount": 0
+  }
+]

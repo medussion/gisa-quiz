@@ -1,0 +1,2030 @@
+[
+  {
+    "id": "2023-1-001",
+    "sourceType": "past_exam",
+    "sourceLabel": "2023년 1회 실기 복원 (newbt.kr 문제은행)",
+    "sourceUrls": [
+      "https://newbt.kr/시험/정보처리기사 실기/2023%EB%85%84+1%ED%9A%8C/%EC%98%A4%EC%86%8C%ED%94%84%ED%8A%B80506",
+      "https://newbt.kr/문제/48393"
+    ],
+    "year": 2023,
+    "round": 1,
+    "category": "programming_language",
+    "subcategory": null,
+    "questionType": "code_output",
+    "question": "아래 자바 코드에서 출력되는 값을 작성하시오.",
+    "code": "class Static{\n    public int a = 20;\n    static int b = 0;\n}\n\npublic class Test{\n    public static void main(String[] args) {\n        int  a = 10;\n        Static.b = a;\n        Static st = new Static();\n\n        System.out.println(Static.b++);\n        System.out.println(st.b);\n        System.out.println(a);\n        System.out.print(st.a);\n    }\n}",
+    "codeLang": null,
+    "image": null,
+    "answer": [
+      "10\n11\n10\n20"
+    ],
+    "acceptedAnswers": [
+      "10 11 10 20",
+      "10111020"
+    ],
+    "choices": null,
+    "hint": null,
+    "caseSensitive": false,
+    "orderSensitive": false,
+    "explanation": "static 변수는 클래스에 하나뿐이라 객체를 만들지 않아도 공유된다. Static.b = a 로 b가 10이 된 뒤, println(Static.b++)는 후위 증가라 증가 전 값 10을 찍고 b를 11로 만든다. 그다음 st.b는 같은 static 변수이므로 11, 지역 변수 a는 그대로 10, 인스턴스 변수 st.a는 20이다. 따라서 10 / 11 / 10 / 20 이 차례로 출력된다.",
+    "difficulty": 3,
+    "verificationStatus": "single_source",
+    "verificationCount": 1,
+    "basedOn": null,
+    "active": true
+  },
+  {
+    "id": "2023-1-002",
+    "sourceType": "past_exam",
+    "sourceLabel": "2023년 1회 실기 복원 (newbt.kr 문제은행)",
+    "sourceUrls": [
+      "https://newbt.kr/시험/정보처리기사 실기/2023%EB%85%84+1%ED%9A%8C/%EC%98%A4%EC%86%8C%ED%94%84%ED%8A%B80506",
+      "https://newbt.kr/문제/48394"
+    ],
+    "year": 2023,
+    "round": 1,
+    "category": "programming_language",
+    "subcategory": "C 언어",
+    "questionType": "code_output",
+    "question": "다음 C언어의 출력값을 작성하시오.",
+    "code": "#include\n\nint main(){\n\n    char a[] = \"Art\";\n    char* p = NULL;\n    p = a;\n\n    printf(\"%sn\", a);\n    printf(\"%cn\", *p);\n    printf(\"%cn\", *a);\n    printf(\"%sn\", p);\n\n    for(int i = 0; a[i] != '\u0000'; i++)\n    printf(\"%c\", a[i]);\n\n}",
+    "codeLang": null,
+    "image": null,
+    "answer": [
+      "Art\nA\nA\nArt\nArt"
+    ],
+    "acceptedAnswers": [
+      "Art A A Art Art",
+      "ArtAAArtArt"
+    ],
+    "choices": null,
+    "hint": null,
+    "caseSensitive": false,
+    "orderSensitive": false,
+    "explanation": "배열 이름 a는 첫 원소의 주소이므로 p = a 로 두 이름이 같은 문자열을 가리킨다. %s는 문자열 전체를, %c는 한 글자를 찍으므로 Art / A / A / Art 가 나오고, 마지막 반복문이 종료 문자 전까지 한 글자씩 출력해 Art가 한 번 더 찍힌다. (복원 과정에서 코드의 역슬래시가 빠져 '\\n' 이 'n' 처럼 보이는 점은 감안하고 읽어야 한다.)",
+    "difficulty": 3,
+    "verificationStatus": "single_source",
+    "verificationCount": 1,
+    "basedOn": null,
+    "active": true
+  },
+  {
+    "id": "2023-1-003",
+    "sourceType": "past_exam",
+    "sourceLabel": "2023년 1회 실기 복원 (newbt.kr 문제은행)",
+    "sourceUrls": [
+      "https://newbt.kr/시험/정보처리기사 실기/2023%EB%85%84+1%ED%9A%8C/%EC%98%A4%EC%86%8C%ED%94%84%ED%8A%B80506",
+      "https://newbt.kr/문제/48395"
+    ],
+    "year": 2023,
+    "round": 1,
+    "category": "programming_language",
+    "subcategory": "C 언어",
+    "questionType": "code_output",
+    "question": "다음 C언어의 출력값을 작성하시오.",
+    "code": "#include\n\nint main(){\n\n    char* a = \"qwer\";\n    char* b = \"qwtety\";\n\n    for(int i = 0; a[i] != '\u0000' ; i++){\n        for(int j = 0; b[j] != '\u0000'; j++){\n            if(a[i] == b[j]) printf(\"%c\", a[i]);\n        }\n    }\n\n}",
+    "codeLang": null,
+    "image": null,
+    "answer": [
+      "qwe"
+    ],
+    "acceptedAnswers": [],
+    "choices": null,
+    "hint": null,
+    "caseSensitive": false,
+    "orderSensitive": false,
+    "explanation": "바깥 반복문이 a의 글자를 하나씩 잡고, 안쪽 반복문이 b 전체를 훑으며 같은 글자를 만날 때마다 출력한다. a는 \"qwer\", b는 \"qwtety\"이므로 q·w·e는 b에 있어 찍히고 r은 b에 없어 찍히지 않는다. 결과는 qwe다.",
+    "difficulty": 3,
+    "verificationStatus": "single_source",
+    "verificationCount": 1,
+    "basedOn": null,
+    "active": true
+  },
+  {
+    "id": "2023-1-004",
+    "sourceType": "past_exam",
+    "sourceLabel": "2023년 1회 실기 복원 (newbt.kr 문제은행)",
+    "sourceUrls": [
+      "https://newbt.kr/시험/정보처리기사 실기/2023%EB%85%84+1%ED%9A%8C/%EC%98%A4%EC%86%8C%ED%94%84%ED%8A%B80506",
+      "https://newbt.kr/문제/48396"
+    ],
+    "year": 2023,
+    "round": 1,
+    "category": "programming_language",
+    "subcategory": "Ajax",
+    "questionType": "term",
+    "question": "다음 괄호안에 들어가는 용어의 Full Name 또는 약자를 작성하시오.",
+    "code": "(   )은/는 비동기적인 웹 애플리케이션의 제작을 위해 JavaScript와 XML을 이용한 비동기적 정보 교환 기법이다.\n\n(   )은/는 필요한 데이터만을 웹서버에 요청해서 받은 후 클라이언트에서 데이터에 대한 처리를 할 수 있다.\n보통 SOAP이나 XML 기반의 웹 서비스 프로토콜이 사용되며, 웹 서버의 응답을 처리하기 위해 클라이언트 쪽에서는 자바스크립트를 쓴다.\n\n(   )은/는 Google Map과 Google pages에서 사용한 기술에 기반하여 제작되었다.",
+    "codeLang": null,
+    "image": null,
+    "answer": [
+      "AJAX"
+    ],
+    "acceptedAnswers": [],
+    "choices": null,
+    "hint": null,
+    "caseSensitive": false,
+    "orderSensitive": false,
+    "explanation": "AJAX(Asynchronous JavaScript And XML)다. 페이지 전체를 새로 받지 않고 필요한 데이터만 비동기로 주고받아 화면 일부만 갱신한다. 구글 지도처럼 스크롤할 때마다 지도 조각만 받아오는 방식이 대표적인 예다.",
+    "difficulty": 3,
+    "verificationStatus": "single_source",
+    "verificationCount": 1,
+    "basedOn": null,
+    "active": true
+  },
+  {
+    "id": "2023-1-005",
+    "sourceType": "past_exam",
+    "sourceLabel": "2023년 1회 실기 복원 (newbt.kr 문제은행)",
+    "sourceUrls": [
+      "https://newbt.kr/시험/정보처리기사 실기/2023%EB%85%84+1%ED%9A%8C/%EC%98%A4%EC%86%8C%ED%94%84%ED%8A%B80506",
+      "https://newbt.kr/문제/48398"
+    ],
+    "year": 2023,
+    "round": 1,
+    "category": "app_sw_basics",
+    "subcategory": "패킷 스위칭",
+    "questionType": "short_answer",
+    "question": "아래 내용을 확인하여 괄호 안에 용어를 표안에 알맞는 값을 고르시오.",
+    "code": "• 회선 교환 방식\n• 데이터그램 방식\n• 가상 회선 방식\n• 메시지 교환 방식",
+    "codeLang": null,
+    "image": "/question-images/2023-1-005.png",
+    "answer": [
+      "가상회선, 데이터그램"
+    ],
+    "acceptedAnswers": [],
+    "choices": null,
+    "hint": null,
+    "caseSensitive": false,
+    "orderSensitive": false,
+    "explanation": "연결형인 가상 회선 방식은 데이터를 보내기 전에 경로를 미리 정해두고 그 길로만 보내므로 패킷이 순서대로 도착한다. 비연결형인 데이터그램 방식은 미리 연결하지 않고 패킷마다 주소를 붙여 각자 다른 길로 보내므로 순서가 뒤바뀔 수 있고 도착 보장도 없다. 둘 다 패킷 교환 방식이며, 회선 자체를 독점하는 회선 교환 방식과 구분한다.",
+    "difficulty": 3,
+    "verificationStatus": "single_source",
+    "verificationCount": 1,
+    "basedOn": null,
+    "active": true
+  },
+  {
+    "id": "2023-1-006",
+    "sourceType": "past_exam",
+    "sourceLabel": "2023년 1회 실기 복원 (newbt.kr 문제은행)",
+    "sourceUrls": [
+      "https://newbt.kr/시험/정보처리기사 실기/2023%EB%85%84+1%ED%9A%8C/%EC%98%A4%EC%86%8C%ED%94%84%ED%8A%B80506",
+      "https://newbt.kr/문제/48399"
+    ],
+    "year": 2023,
+    "round": 1,
+    "category": "security",
+    "subcategory": "L2TP",
+    "questionType": "term",
+    "question": "아래 내용을 확인하여 알맞는 답을 작성하시오.",
+    "code": "○ 2 계층(데이터링크 계층)에서 구현되는 터널링 기술 중 하나\n○ L2F와 PPTP가 결합된 프로토콜로 VPN과 인터넷 서비스 제공자(ISP)가 이용\n○ IPsec을 함께 사용하면 PPTP보다 훨씬 안전하지만 보안보다 익명화에 더 적합",
+    "codeLang": null,
+    "image": null,
+    "answer": [
+      "L2TP"
+    ],
+    "acceptedAnswers": [],
+    "choices": null,
+    "hint": null,
+    "caseSensitive": false,
+    "orderSensitive": false,
+    "explanation": "L2TP(Layer 2 Tunneling Protocol)다. 이름 그대로 2계층에서 터널을 만드는 프로토콜로, 시스코의 L2F와 마이크로소프트의 PPTP를 합쳐 만들었다. 자체 암호화가 없어서 보통 IPsec과 묶어 L2TP/IPsec 형태로 쓴다.",
+    "difficulty": 3,
+    "verificationStatus": "single_source",
+    "verificationCount": 1,
+    "basedOn": null,
+    "active": true
+  },
+  {
+    "id": "2023-1-007",
+    "sourceType": "past_exam",
+    "sourceLabel": "2023년 1회 실기 복원 (newbt.kr 문제은행)",
+    "sourceUrls": [
+      "https://newbt.kr/시험/정보처리기사 실기/2023%EB%85%84+1%ED%9A%8C/%EC%98%A4%EC%86%8C%ED%94%84%ED%8A%B80506",
+      "https://newbt.kr/문제/48400"
+    ],
+    "year": 2023,
+    "round": 1,
+    "category": "security",
+    "subcategory": "SSH",
+    "questionType": "term",
+    "question": "다음 설명에 해당하는 알맞은 용어를 영문 3글자로 쓰시오.",
+    "code": "○ 다른 컴퓨터에 로그인, 원격 명령 실행, 파일 복사 등을 수행할 수 있도록 다양한 기능을 지원하는 프로토콜 또는 이를 이용한 응용 프로그램이다.\n\n○ 데이터 암호화와 강력한 인증 방법으로 보안성이 낮은 네트워크에서도 안전하게 통신할 수 있다.\n\n○ 키(Key)를 통한 인증 방법으로 사용하려면 사전에  클라이언트의 공개키를 서버에 등록해야 한다.\n\n○기본적으로는 22번 포트를 사용한다.",
+    "codeLang": null,
+    "image": null,
+    "answer": [
+      "SSH"
+    ],
+    "acceptedAnswers": [],
+    "choices": null,
+    "hint": null,
+    "caseSensitive": false,
+    "orderSensitive": false,
+    "explanation": "SSH(Secure Shell)다. 원격 로그인·명령 실행·파일 복사를 암호화된 통로로 처리하며 기본 포트는 22번이다. 공개키 인증을 쓰려면 클라이언트의 공개키를 미리 서버의 authorized_keys에 등록해 두어야 한다.",
+    "difficulty": 3,
+    "verificationStatus": "single_source",
+    "verificationCount": 1,
+    "basedOn": null,
+    "active": true
+  },
+  {
+    "id": "2023-1-008",
+    "sourceType": "past_exam",
+    "sourceLabel": "2023년 1회 실기 복원 (newbt.kr 문제은행)",
+    "sourceUrls": [
+      "https://newbt.kr/시험/정보처리기사 실기/2023%EB%85%84+1%ED%9A%8C/%EC%98%A4%EC%86%8C%ED%94%84%ED%8A%B80506",
+      "https://newbt.kr/문제/48401"
+    ],
+    "year": 2023,
+    "round": 1,
+    "category": "security",
+    "subcategory": "트로이 목마",
+    "questionType": "short_answer",
+    "question": "를 참고하여 아래 설명에 대한 (1) ~ (3)의 알맞는 답을 작성하시오.",
+    "code": "- 트로이 목마\n- 웜\n- 바이러스",
+    "codeLang": null,
+    "image": "/question-images/2023-1-008.png",
+    "answer": [
+      "웜",
+      "트로이 목마",
+      "바이러스"
+    ],
+    "acceptedAnswers": [],
+    "choices": null,
+    "hint": null,
+    "caseSensitive": false,
+    "orderSensitive": true,
+    "explanation": "(1) 웜(Worm)은 다른 파일에 붙지 않고 스스로 복제해 네트워크를 타고 퍼진다. (2) 트로이 목마는 유용한 프로그램인 척 숨어 들어와 뒤에서 해로운 일을 하되 스스로 복제하지는 않는다. (3) 바이러스는 다른 파일에 자신을 붙여 감염시키고 그 파일이 실행될 때 함께 퍼진다. 자기 복제 여부와 숙주 파일 필요 여부로 셋을 가른다.",
+    "difficulty": 3,
+    "verificationStatus": "single_source",
+    "verificationCount": 1,
+    "basedOn": null,
+    "active": true
+  },
+  {
+    "id": "2023-1-009",
+    "sourceType": "past_exam",
+    "sourceLabel": "2023년 1회 실기 복원 (newbt.kr 문제은행)",
+    "sourceUrls": [
+      "https://newbt.kr/시험/정보처리기사 실기/2023%EB%85%84+1%ED%9A%8C/%EC%98%A4%EC%86%8C%ED%94%84%ED%8A%B80506",
+      "https://newbt.kr/문제/48402"
+    ],
+    "year": 2023,
+    "round": 1,
+    "category": "programming_language",
+    "subcategory": null,
+    "questionType": "short_answer",
+    "question": "다음 아래 코드에서 이진수 101110를 십진수로 변환하는 C언어 코드에 대해 \n괄호 (a) (b)의 적합한 답을 작성하시오.",
+    "code": "#include\n\nint main() {\n    int input = 101110;\n    int di = 1;\n    int sum = 0;\n\n    while (1) {\n\n        if (input == 0) break;\n        else {\n\n          sum = sum + (input (a)(b)) * di;\n             di = di * 2;\n             input = input / 10;\n        }\n    }\n\n    printf(\"%d\", sum);\n\n    return 0;\n}",
+    "codeLang": null,
+    "image": null,
+    "answer": [
+      "(a) % , (b) 10 or 5 or 2"
+    ],
+    "acceptedAnswers": [
+      "또는",
+      "(a) & , (b) 1"
+    ],
+    "choices": null,
+    "hint": null,
+    "caseSensitive": false,
+    "orderSensitive": false,
+    "explanation": "십진수로 바꾸려면 이진수를 오른쪽 자리부터 하나씩 떼어내 자릿값(di)을 곱해 더해야 한다. 마지막 자리를 떼는 연산이 (a) % (b) 10, 즉 10으로 나눈 나머지다. 그다음 di를 2배로 키우고 input을 10으로 나눠 다음 자리로 넘어간다. 101110을 이렇게 처리하면 46이 나온다.",
+    "difficulty": 3,
+    "verificationStatus": "single_source",
+    "verificationCount": 1,
+    "basedOn": null,
+    "active": true
+  },
+  {
+    "id": "2023-1-010",
+    "sourceType": "past_exam",
+    "sourceLabel": "2023년 1회 실기 복원 (newbt.kr 문제은행)",
+    "sourceUrls": [
+      "https://newbt.kr/시험/정보처리기사 실기/2023%EB%85%84+1%ED%9A%8C/%EC%98%A4%EC%86%8C%ED%94%84%ED%8A%B80506",
+      "https://newbt.kr/문제/48403"
+    ],
+    "year": 2023,
+    "round": 1,
+    "category": "security",
+    "subcategory": "ICMP",
+    "questionType": "term",
+    "question": "다음 보안 관련 설명으로 괄호안에 알맞는 용어를 작성하시오.",
+    "code": "(    )은/는 TCP/IP에서 IP 패킷을 처리할 때 발생되는 문제를 알려주는 프로토콜이다.\n\n(    ) 프로토콜은 보통 다른 호스트나 게이트웨이 와 연결된 네트웍에 문제가 있는지 확인하기 위한 목적으로 주로 사용된다.\n\n(    ) 을/를 이용한 공격에는 (    ) Flooding가 있는데 ping 명령어를 통한 (     ) 패킷을 연속적으로 계속 보내어 서버의 요청에 응답으로 인한 다른작업을 하지 못하도록 하는 공격이다.",
+    "codeLang": null,
+    "image": null,
+    "answer": [
+      "ICMP"
+    ],
+    "acceptedAnswers": [],
+    "choices": null,
+    "hint": null,
+    "caseSensitive": false,
+    "orderSensitive": false,
+    "explanation": "ICMP(Internet Control Message Protocol)다. IP 패킷을 주고받다 생긴 문제(목적지 도달 불가, 시간 초과 등)를 알려주는 프로토콜이며 ping이 이를 사용한다. ICMP Flooding은 ping 패킷을 끝없이 보내 서버가 응답하느라 다른 일을 못 하게 만드는 공격이다.",
+    "difficulty": 3,
+    "verificationStatus": "single_source",
+    "verificationCount": 1,
+    "basedOn": null,
+    "active": true
+  },
+  {
+    "id": "2023-1-011",
+    "sourceType": "past_exam",
+    "sourceLabel": "2023년 1회 실기 복원 (newbt.kr 문제은행)",
+    "sourceUrls": [
+      "https://newbt.kr/시험/정보처리기사 실기/2023%EB%85%84+1%ED%9A%8C/%EC%98%A4%EC%86%8C%ED%94%84%ED%8A%B80506",
+      "https://newbt.kr/문제/48404"
+    ],
+    "year": 2023,
+    "round": 1,
+    "category": "programming_language",
+    "subcategory": null,
+    "questionType": "term",
+    "question": "다음은 디자인 패턴에 관한 설명이다. \n설명에 내용에 알맞는 답을 고르시오.",
+    "code": "(   )은/는 복잡한 시스템을 개발하기 쉽도록 클래스나 객체을 조합하는 패턴에 속하며,\n대리라는 이름으로도 불린다. 내부에서는 객체 간의 복잡한 관계를 단순하게 정리해 주고,\n외부에서는 객체의 세부인 내용을 숨기는 역할을 한다.",
+    "codeLang": null,
+    "image": "/question-images/2023-1-011.png",
+    "answer": [
+      "proxy"
+    ],
+    "acceptedAnswers": [],
+    "choices": null,
+    "hint": null,
+    "caseSensitive": false,
+    "orderSensitive": false,
+    "explanation": "프록시(Proxy) 패턴이다. 실제 객체 앞에 대리 객체를 세워 접근을 제어하고, 바깥에서는 실제 객체의 세부 내용을 볼 수 없게 감춘다. 필요할 때까지 실제 객체 생성을 미루거나 접근 권한을 검사하는 일을 대리 객체가 대신한다. 객체를 조합해 구조를 만드는 구조 패턴에 속한다.",
+    "difficulty": 3,
+    "verificationStatus": "single_source",
+    "verificationCount": 1,
+    "basedOn": null,
+    "active": true
+  },
+  {
+    "id": "2023-1-012",
+    "sourceType": "past_exam",
+    "sourceLabel": "2023년 1회 실기 복원 (newbt.kr 문제은행)",
+    "sourceUrls": [
+      "https://newbt.kr/시험/정보처리기사 실기/2023%EB%85%84+1%ED%9A%8C/%EC%98%A4%EC%86%8C%ED%94%84%ED%8A%B80506",
+      "https://newbt.kr/문제/48405"
+    ],
+    "year": 2023,
+    "round": 1,
+    "category": "data_io",
+    "subcategory": "릴레이션",
+    "questionType": "short_answer",
+    "question": "릴레이션의 구성하는 용어들에 대한 다음 설명에서 괄호(① ~ ③)에 들어갈 알맞은 답을\n에서 찾아 쓰시오.",
+    "code": "○도메인  ○차수  ○속성  ○튜플\n○디그리  ○카디널리티  ○릴레이션 스키마  ○릴레이션 인스턴스",
+    "codeLang": null,
+    "image": "/question-images/2023-1-012.png",
+    "answer": [
+      "튜플",
+      "릴레이션 인스턴스",
+      "카디널리티"
+    ],
+    "acceptedAnswers": [],
+    "choices": null,
+    "hint": null,
+    "caseSensitive": false,
+    "orderSensitive": true,
+    "explanation": "① 릴레이션의 행 하나가 튜플(Tuple)이다. ② 특정 시점에 릴레이션에 실제로 들어 있는 튜플들의 집합이 릴레이션 인스턴스이고, 릴레이션의 이름과 속성 구성을 정의한 틀은 릴레이션 스키마다. ③ 튜플의 개수는 카디널리티(Cardinality)이며 속성의 개수는 차수(Degree)다.",
+    "difficulty": 3,
+    "verificationStatus": "single_source",
+    "verificationCount": 1,
+    "basedOn": null,
+    "active": true
+  },
+  {
+    "id": "2023-1-013",
+    "sourceType": "past_exam",
+    "sourceLabel": "2023년 1회 실기 복원 (newbt.kr 문제은행)",
+    "sourceUrls": [
+      "https://newbt.kr/시험/정보처리기사 실기/2023%EB%85%84+1%ED%9A%8C/%EC%98%A4%EC%86%8C%ED%94%84%ED%8A%B80506",
+      "https://newbt.kr/문제/48406"
+    ],
+    "year": 2023,
+    "round": 1,
+    "category": "sql",
+    "subcategory": "SQL DELETE 구문",
+    "questionType": "sql",
+    "question": "[학생] 테이블에서 학생 이름이 '민수'인 튜플을 삭제하는 쿼리를 작성하시오.",
+    "code": "조건\n- 컬럼의 값이 문자열일 경우 작은 따옴표 ('  ')를 표시하시오.\n- SQL 마지막에 세미콜론(;)은 표기하지 않아도 관계 없습니다.",
+    "codeLang": null,
+    "image": "/question-images/2023-1-013.png",
+    "answer": [
+      "DELETE FROM 학생 WHERE 이름 = '민수';"
+    ],
+    "acceptedAnswers": [
+      "DELETE FROM 학생 WHERE 이름 = 민수;",
+      "DELETE FROM 학생 WHERE 이름 = '민수'"
+    ],
+    "choices": null,
+    "hint": null,
+    "caseSensitive": false,
+    "orderSensitive": false,
+    "explanation": "행을 지우는 명령은 DELETE FROM 테이블 WHERE 조건; 이다. 문자열 값은 작은따옴표로 감싸므로 DELETE FROM 학생 WHERE 이름 = '민수'; 가 된다. WHERE를 빠뜨리면 모든 행이 지워지고, 테이블 구조까지 없애려면 DROP TABLE을 쓴다.",
+    "difficulty": 3,
+    "verificationStatus": "single_source",
+    "verificationCount": 1,
+    "basedOn": null,
+    "active": true
+  },
+  {
+    "id": "2023-1-014",
+    "sourceType": "past_exam",
+    "sourceLabel": "2023년 1회 실기 복원 (newbt.kr 문제은행)",
+    "sourceUrls": [
+      "https://newbt.kr/시험/정보처리기사 실기/2023%EB%85%84+1%ED%9A%8C/%EC%98%A4%EC%86%8C%ED%94%84%ED%8A%B80506",
+      "https://newbt.kr/문제/48407"
+    ],
+    "year": 2023,
+    "round": 1,
+    "category": "programming_language",
+    "subcategory": "C 언어 포인터",
+    "questionType": "short_answer",
+    "question": "다음 코드에서 괄호안에 알맞는 값을 변수명으로 작성하시오.",
+    "code": "#include\nvoid swap(int *a, int idx1, int idx2) {\n int t= a[idx1];\n a[idx1] = a[idx2];\n a[(    ①    )] = t;\n}\n\nvoid  Usort(int *a, int len) {\n  for(int i = 0; i  a[j+1])\n            swap(a,j,j+1);\n}\n\nvoid main(){\n int a[] = {85, 75, 50, 100, 95};\n int nx = 5;\n Usort(a, (    ②    ));\n}",
+    "codeLang": null,
+    "image": null,
+    "answer": [
+      "idx2",
+      "nx"
+    ],
+    "acceptedAnswers": [],
+    "choices": null,
+    "hint": null,
+    "caseSensitive": false,
+    "orderSensitive": true,
+    "explanation": "① swap()은 세 줄로 값을 맞바꾸는 전형적인 코드다. t에 a[idx1]을 잠시 넣고, a[idx1]에 a[idx2]를 넣었으므로 마지막에는 a[idx2]에 t를 넣어야 교환이 끝난다. ② 정렬 함수에는 배열과 길이를 넘겨야 하므로 길이를 담고 있는 변수 nx를 넘긴다.",
+    "difficulty": 3,
+    "verificationStatus": "single_source",
+    "verificationCount": 1,
+    "basedOn": null,
+    "active": true
+  },
+  {
+    "id": "2023-1-015",
+    "sourceType": "past_exam",
+    "sourceLabel": "2023년 1회 실기 복원 (newbt.kr 문제은행)",
+    "sourceUrls": [
+      "https://newbt.kr/시험/정보처리기사 실기/2023%EB%85%84+1%ED%9A%8C/%EC%98%A4%EC%86%8C%ED%94%84%ED%8A%B80506",
+      "https://newbt.kr/문제/48408"
+    ],
+    "year": 2023,
+    "round": 1,
+    "category": "programming_language",
+    "subcategory": null,
+    "questionType": "code_output",
+    "question": "다음 파이썬 코드의 알맞는 출력값을 작성하시오.",
+    "code": "a = {'한국', '중국', '일본'}\na.add('베트남')\na.add('중국')\na.remove('일본')\na.update({'홍콩', '한국', '태국'})\nprint(a)",
+    "codeLang": null,
+    "image": null,
+    "answer": [
+      "{'한국', '중국', '베트남', '홍콩', '태국'}"
+    ],
+    "acceptedAnswers": [
+      "{한국, 중국, 베트남, 홍콩, 태국}"
+    ],
+    "choices": null,
+    "hint": null,
+    "caseSensitive": false,
+    "orderSensitive": false,
+    "explanation": "파이썬 집합(set)은 중복을 허용하지 않고 순서도 없다. 초기 {한국, 중국, 일본}에 베트남을 넣고, 이미 있는 중국을 다시 넣어봐야 변화가 없으며, 일본을 빼고, update로 홍콩·한국·태국을 한꺼번에 넣는다(한국은 이미 있어 무시). 남는 원소는 한국·중국·베트남·홍콩·태국 다섯 개다. 출력 순서는 실행할 때마다 달라질 수 있으므로 원소 구성만 맞으면 된다.",
+    "difficulty": 3,
+    "verificationStatus": "single_source",
+    "verificationCount": 1,
+    "basedOn": null,
+    "active": true
+  },
+  {
+    "id": "2023-1-016",
+    "sourceType": "past_exam",
+    "sourceLabel": "2023년 1회 실기 복원 (newbt.kr 문제은행)",
+    "sourceUrls": [
+      "https://newbt.kr/시험/정보처리기사 실기/2023%EB%85%84+1%ED%9A%8C/%EC%98%A4%EC%86%8C%ED%94%84%ED%8A%B80506",
+      "https://newbt.kr/문제/48409"
+    ],
+    "year": 2023,
+    "round": 1,
+    "category": "sql",
+    "subcategory": "SQL",
+    "questionType": "sql",
+    "question": "다음 성적 테이블에서 과목별 점수의 평균이 90점 이상인 '과목이름', '최소점수', '최대점수' 를 검색하고자 한다. [조건]을 참고하여 적합한 SQL문을 작성하시오.",
+    "code": "[조건]\n- WHERE사용하지 말아야 한다.\n- SELECT절에 별칭을 사용하여 작성해야 한다.\n- SQL 구문 마지막에 세미콜론(;)은 생락 가능하다.\n- 반드시 GROUP BY와 HAVING 을 사용해야 한다.\n- 집계 함수를 사용해야 한다.",
+    "codeLang": null,
+    "image": "/question-images/2023-1-016.png",
+    "answer": [
+      "SELECT 과목이름 ,MIN(점수) AS 최소점수 ,MAX(점수) AS 최대점수"
+    ],
+    "acceptedAnswers": [
+      "FROM 성적",
+      "GROUP BY 과목이름 HAVING AVG(점수) >= 90"
+    ],
+    "choices": null,
+    "hint": null,
+    "caseSensitive": false,
+    "orderSensitive": false,
+    "explanation": "집계 결과에 조건을 걸 때는 WHERE가 아니라 HAVING을 쓴다는 것이 핵심이다. 과목이름으로 묶어 최소·최대 점수를 구하고 평균이 90 이상인 그룹만 남긴다. SELECT 과목이름, MIN(점수) AS 최소점수, MAX(점수) AS 최대점수 FROM 성적 GROUP BY 과목이름 HAVING AVG(점수) >= 90 이 답이다. WHERE는 묶기 전 개별 행을, HAVING은 묶은 뒤 그룹을 거른다.",
+    "difficulty": 3,
+    "verificationStatus": "single_source",
+    "verificationCount": 1,
+    "basedOn": null,
+    "active": true
+  },
+  {
+    "id": "2023-1-017",
+    "sourceType": "past_exam",
+    "sourceLabel": "2023년 1회 실기 복원 (newbt.kr 문제은행)",
+    "sourceUrls": [
+      "https://newbt.kr/시험/정보처리기사 실기/2023%EB%85%84+1%ED%9A%8C/%EC%98%A4%EC%86%8C%ED%94%84%ED%8A%B80506",
+      "https://newbt.kr/문제/48410"
+    ],
+    "year": 2023,
+    "round": 1,
+    "category": "programming_language",
+    "subcategory": "자바 다형성",
+    "questionType": "code_output",
+    "question": "다음 JAVA 코드에서 알맞는 출력 값을 작성하시오.",
+    "code": "abstact class Vehicle {\n    String name;\n    abstract public String getName(String val);\n\n    public String getName() {\n            return \"Vehicle name: \" + name;\n    }\n}\n\nclass Car extends Vehicle {\n    public Car(String val) {\n            name=super.name=val;\n    }\n\n    public String getName(String val) {\n            return \"Car name:\" + val;\n    }\n\n    public String getName(byte val[]) {\n            return \"Car name:\" + val;\n    }\n}\n\n\npublic class Main {\n    public static void main(String[] args) {\n    Vehicle obj = new Car(\"Spark\");\n    System.out.println(obj.getName());\n    }\n}",
+    "codeLang": null,
+    "image": null,
+    "answer": [
+      "Vehicle name: Spark"
+    ],
+    "acceptedAnswers": [],
+    "choices": null,
+    "hint": null,
+    "caseSensitive": false,
+    "orderSensitive": false,
+    "explanation": "Vehicle obj = new Car(\"Spark\") 에서 호출한 obj.getName()은 매개변수가 없는 버전이다. Car에 있는 getName(String)과 getName(byte[])는 매개변수가 달라 오버로딩일 뿐 오버라이딩이 아니므로, 매개변수 없는 getName()은 Vehicle의 것이 실행된다. 생성자에서 name에 \"Spark\"를 넣었으므로 \"Vehicle name: Spark\"가 출력된다.",
+    "difficulty": 3,
+    "verificationStatus": "single_source",
+    "verificationCount": 1,
+    "basedOn": null,
+    "active": true
+  },
+  {
+    "id": "2023-1-018",
+    "sourceType": "past_exam",
+    "sourceLabel": "2023년 1회 실기 복원 (newbt.kr 문제은행)",
+    "sourceUrls": [
+      "https://newbt.kr/시험/정보처리기사 실기/2023%EB%85%84+1%ED%9A%8C/%EC%98%A4%EC%86%8C%ED%94%84%ED%8A%B80506",
+      "https://newbt.kr/문제/48412"
+    ],
+    "year": 2023,
+    "round": 1,
+    "category": "data_io",
+    "subcategory": "스키마 문제",
+    "questionType": "short_answer",
+    "question": "다음은 스키마와 관련된 내용이다. \n각 괄호안에 알맞는 답을 작성하시오.",
+    "code": null,
+    "codeLang": null,
+    "image": "/question-images/2023-1-018.png",
+    "answer": [
+      "외부",
+      "개념",
+      "내부"
+    ],
+    "acceptedAnswers": [],
+    "choices": null,
+    "hint": null,
+    "caseSensitive": false,
+    "orderSensitive": true,
+    "explanation": "스키마는 보는 관점에 따라 3단계로 나뉜다. (1) 외부 스키마는 사용자나 응용 프로그램이 각자 필요한 부분만 보는 관점이라 여러 개가 있을 수 있고 서브 스키마라고도 한다. (2) 개념 스키마는 조직 전체가 공유하는 논리 구조로 데이터베이스에 하나만 존재하며, 개체 간 관계와 접근 권한·무결성 규칙을 정의한다. (3) 내부 스키마는 실제 저장 장치에 데이터가 어떻게 저장되는지를 나타낸다.",
+    "difficulty": 3,
+    "verificationStatus": "single_source",
+    "verificationCount": 1,
+    "basedOn": null,
+    "active": true
+  },
+  {
+    "id": "2023-1-019",
+    "sourceType": "past_exam",
+    "sourceLabel": "2023년 1회 실기 복원 (newbt.kr 문제은행)",
+    "sourceUrls": [
+      "https://newbt.kr/시험/정보처리기사 실기/2023%EB%85%84+1%ED%9A%8C/%EC%98%A4%EC%86%8C%ED%94%84%ED%8A%B80506",
+      "https://newbt.kr/문제/48413"
+    ],
+    "year": 2023,
+    "round": 1,
+    "category": "testing",
+    "subcategory": null,
+    "questionType": "short_answer",
+    "question": "다음 아래 제어 흐름 그래프가 분기 커버리지를 만족하기 위한 테스팅 순서를 쓰시오.",
+    "code": null,
+    "codeLang": null,
+    "image": "/question-images/2023-1-019.png",
+    "answer": [
+      "1234561, 124567"
+    ],
+    "acceptedAnswers": [
+      "또는",
+      "1234567, 124561"
+    ],
+    "choices": null,
+    "hint": null,
+    "caseSensitive": false,
+    "orderSensitive": false,
+    "explanation": "분기(결정) 커버리지는 각 분기점에서 참과 거짓을 모두 한 번씩 거쳐야 만족한다. ②(X > K?)와 ⑥(RESULT > 1?)이 분기점이므로, ②의 YES와 ⑥의 YES를 지나는 1234561 경로와 ②의 NO와 ⑥의 NO를 지나는 124567 경로를 함께 수행하면 네 가지 분기를 모두 덮는다.",
+    "difficulty": 3,
+    "verificationStatus": "single_source",
+    "verificationCount": 1,
+    "basedOn": null,
+    "active": true
+  },
+  {
+    "id": "2023-1-020",
+    "sourceType": "past_exam",
+    "sourceLabel": "2023년 1회 실기 복원 (newbt.kr 문제은행)",
+    "sourceUrls": [
+      "https://newbt.kr/시험/정보처리기사 실기/2023%EB%85%84+1%ED%9A%8C/%EC%98%A4%EC%86%8C%ED%94%84%ED%8A%B80506",
+      "https://newbt.kr/문제/48415"
+    ],
+    "year": 2023,
+    "round": 1,
+    "category": "programming_language",
+    "subcategory": "자바",
+    "questionType": "code_output",
+    "question": "다음 Java 코드에 대한 출력 값을 작성하시오.",
+    "code": "class Parent {\n    int x = 100;\n    Parent() {\n        this(500);\n    }\n\n    Parent(int x) {\n        this.x = x;\n    }\n\n    int getX() {\n        return x;\n    }\n}\n\nclass Child extends Parent {\n    int x = 4000;\n    Child() {\n        this(5000);\n    }\n\n    Child(int x) {\n        this.x = x;\n    }\n}\n\npublic class Main {\n    public static void main(String[] args) {\n        Child obj = new Child();\n        System.out.println(obj.getX());\n    }\n}",
+    "codeLang": null,
+    "image": null,
+    "answer": [
+      "500"
+    ],
+    "acceptedAnswers": [],
+    "choices": null,
+    "hint": null,
+    "caseSensitive": false,
+    "orderSensitive": false,
+    "explanation": "생성자 연쇄 호출 문제다. new Child()는 this(5000)으로 Child(int)를 부르고, 그 앞에 암묵적으로 super()가 실행되어 Parent()가 돌고, Parent()는 다시 this(500)으로 Parent(int)를 불러 Parent의 x를 500으로 만든다. Child의 x는 부모의 x와 이름만 같을 뿐 다른 필드이고, getX()는 Parent에만 있어 Parent의 x를 돌려주므로 500이 출력된다.",
+    "difficulty": 3,
+    "verificationStatus": "single_source",
+    "verificationCount": 1,
+    "basedOn": null,
+    "active": true
+  },
+  {
+    "id": "2023-2-001",
+    "sourceType": "past_exam",
+    "sourceLabel": "2023년 2회 실기 복원 (newbt.kr 문제은행)",
+    "sourceUrls": [
+      "https://newbt.kr/시험/정보처리기사 실기/2023%EB%85%84+2%ED%9A%8C/%EC%98%A4%EC%86%8C%ED%94%84%ED%8A%B80506",
+      "https://newbt.kr/문제/56450"
+    ],
+    "year": 2023,
+    "round": 2,
+    "category": "programming_language",
+    "subcategory": null,
+    "questionType": "short_answer",
+    "question": "다음은 C언어 코드의 문제이다. \n다음의 조건에 맞도록 빈 괄호 안에 알맞은 코드를 작성하시오.",
+    "code": "[조건]\n입력값이 54321일 경우\n출력값이 43215로 출력되어야 한다.",
+    "codeLang": null,
+    "image": "/question-images/2023-2-001.png",
+    "answer": [
+      "n[(i+1) % 5]"
+    ],
+    "acceptedAnswers": [
+      "n[ % 5]",
+      "i+1"
+    ],
+    "choices": null,
+    "hint": null,
+    "caseSensitive": false,
+    "orderSensitive": false,
+    "explanation": "입력 54321이 43215로 나와야 하므로 두 번째 값부터 출력하고 마지막에 첫 번째 값이 와야 한다. 즉 인덱스를 한 칸씩 밀되 끝을 넘으면 처음으로 돌아가야 하므로 n[(i+1) % 5] 가 된다. 나머지 연산으로 배열을 원형처럼 도는 전형적인 방법이다.",
+    "difficulty": 3,
+    "verificationStatus": "single_source",
+    "verificationCount": 1,
+    "basedOn": null,
+    "active": true
+  },
+  {
+    "id": "2023-2-002",
+    "sourceType": "past_exam",
+    "sourceLabel": "2023년 2회 실기 복원 (newbt.kr 문제은행)",
+    "sourceUrls": [
+      "https://newbt.kr/시험/정보처리기사 실기/2023%EB%85%84+2%ED%9A%8C/%EC%98%A4%EC%86%8C%ED%94%84%ED%8A%B80506",
+      "https://newbt.kr/문제/56451"
+    ],
+    "year": 2023,
+    "round": 2,
+    "category": "programming_language",
+    "subcategory": null,
+    "questionType": "short_answer",
+    "question": "다음은 JAVA 코드 문제이다. \n가지고 있는 돈이 총 4620원일 경우 \n1000원, 500원, 100원, 10원의 지폐 및 동전을 \n이용하여 보기의 조건에 맞춰 \"최소한의 코드\"를 작성해 빈 괄호 안을 채우시오.",
+    "code": "[보기]\n아래 주어진 항목들을 응용하여 괄호 안 코드를 작성.\n변수 : m\n연산자 : / , %\n괄호 : [ , ] , ( , )\n정수 : 1000, 500, 100, 10",
+    "codeLang": null,
+    "image": "/question-images/2023-2-002.png",
+    "answer": [
+      "m / 1000",
+      "m % 1000 / 500",
+      "m % 500 / 100",
+      "m % 100 / 10"
+    ],
+    "acceptedAnswers": [
+      "m/1000",
+      "m%1000/500",
+      "m%500/100",
+      "m%100/10"
+    ],
+    "choices": null,
+    "hint": null,
+    "caseSensitive": false,
+    "orderSensitive": true,
+    "explanation": "큰 단위부터 나누고, 남은 금액에 대해 다시 나누는 거스름돈 문제다. 4620원에서 천원짜리는 4620 / 1000 = 4장, 남은 620원에서 오백원짜리는 620 / 500 = 1개, 남은 120원에서 백원짜리는 120 / 100 = 1개, 남은 20원에서 십원짜리는 20 / 10 = 2개다. 정수 나눗셈으로 개수를 구하고 나머지 연산(%)으로 잔액을 넘기는 것이 요령이다.",
+    "difficulty": 3,
+    "verificationStatus": "single_source",
+    "verificationCount": 1,
+    "basedOn": null,
+    "active": true
+  },
+  {
+    "id": "2023-2-003",
+    "sourceType": "past_exam",
+    "sourceLabel": "2023년 2회 실기 복원 (newbt.kr 문제은행)",
+    "sourceUrls": [
+      "https://newbt.kr/시험/정보처리기사 실기/2023%EB%85%84+2%ED%9A%8C/%EC%98%A4%EC%86%8C%ED%94%84%ED%8A%B80506",
+      "https://newbt.kr/문제/56452"
+    ],
+    "year": 2023,
+    "round": 2,
+    "category": "programming_language",
+    "subcategory": null,
+    "questionType": "short_answer",
+    "question": "다음은 C언어의 코드이다. \n다음의 조건에 맞추어 알맞은 출력값을 작성하시오.",
+    "code": "[조건]\n입력값은 홍길동, 김철수, 박영희 순서로 주어진다.",
+    "codeLang": null,
+    "image": "/question-images/2023-2-003.png",
+    "answer": [
+      "박영희\n박영희\n박영희"
+    ],
+    "acceptedAnswers": [
+      "박영희 박영희 박영희",
+      "박영희박영희박영희"
+    ],
+    "choices": null,
+    "hint": null,
+    "caseSensitive": false,
+    "orderSensitive": false,
+    "explanation": "test()가 돌려주는 것은 전역 배열 n의 주소라는 점이 핵심이다. test1·test2·test3 모두 같은 주소를 받으므로 세 포인터가 같은 메모리를 가리킨다. gets()가 매번 그 자리를 덮어쓰기 때문에 마지막에 입력한 '박영희'만 남고, 세 번의 출력이 모두 박영희가 된다. 각각 따로 보관하려면 strdup()이나 malloc으로 복사본을 만들어야 한다.",
+    "difficulty": 3,
+    "verificationStatus": "single_source",
+    "verificationCount": 1,
+    "basedOn": null,
+    "active": true
+  },
+  {
+    "id": "2023-2-004",
+    "sourceType": "past_exam",
+    "sourceLabel": "2023년 2회 실기 복원 (newbt.kr 문제은행)",
+    "sourceUrls": [
+      "https://newbt.kr/시험/정보처리기사 실기/2023%EB%85%84+2%ED%9A%8C/%EC%98%A4%EC%86%8C%ED%94%84%ED%8A%B80506",
+      "https://newbt.kr/문제/56453"
+    ],
+    "year": 2023,
+    "round": 2,
+    "category": "sql",
+    "subcategory": "SQL",
+    "questionType": "sql",
+    "question": "다음은 테이블에 데이터를 삽입하기 위한 과정이다. \n보기의 조건식에 맞게 데이터 삽입을 위한 SQL문을 작성하시오.",
+    "code": "CREATE TABLE 학생 (\n  학번 int,\n  이름 varchar(20),\n  학년 int,\n  전공 varchar(30),\n  전화번호varchar(20)\n);\n\n*****************************************\n- [조건]\n문자열의 경우 작은 따음표를 사용.(' ')",
+    "codeLang": null,
+    "image": "/question-images/2023-2-004.png",
+    "answer": [
+      "INSERT INTO 학생(학번,이름,학년,전공,전화번호)"
+    ],
+    "acceptedAnswers": [
+      "VALUES(22106940,'정처기',4,'컴퓨터공학','010-1234-5678');"
+    ],
+    "choices": null,
+    "hint": null,
+    "caseSensitive": false,
+    "orderSensitive": false,
+    "explanation": "INSERT 문은 INSERT INTO 테이블명(열 목록) VALUES (값 목록); 형태다. 학생 테이블의 열이 학번·이름·학년·전공·전화번호이므로 INSERT INTO 학생(학번, 이름, 학년, 전공, 전화번호) 로 시작한다. 문자열 값은 작은따옴표로 감싸고, 열 목록을 생략하면 테이블에 정의된 순서대로 값을 모두 넣어야 한다.",
+    "difficulty": 3,
+    "verificationStatus": "single_source",
+    "verificationCount": 1,
+    "basedOn": null,
+    "active": true
+  },
+  {
+    "id": "2023-2-005",
+    "sourceType": "past_exam",
+    "sourceLabel": "2023년 2회 실기 복원 (newbt.kr 문제은행)",
+    "sourceUrls": [
+      "https://newbt.kr/시험/정보처리기사 실기/2023%EB%85%84+2%ED%9A%8C/%EC%98%A4%EC%86%8C%ED%94%84%ED%8A%B80506",
+      "https://newbt.kr/문제/56531"
+    ],
+    "year": 2023,
+    "round": 2,
+    "category": "programming_language",
+    "subcategory": null,
+    "questionType": "term",
+    "question": "다음은 C언어의 문제이다. 알맞은 출력값을 작성하시오.",
+    "code": null,
+    "codeLang": null,
+    "image": "/question-images/2023-2-005.png",
+    "answer": [
+      "BCD"
+    ],
+    "acceptedAnswers": [],
+    "choices": null,
+    "hint": null,
+    "caseSensitive": false,
+    "orderSensitive": false,
+    "explanation": "먼저 배열의 합은 73 + 95 + 82 = 250 이고 250 / 30 은 정수 나눗셈이라 8이다. switch(8)은 case 8로 들어가 B를 찍는데 break가 없어 아래로 흘러간다. case 7은 내용이 없고 case 6에서 C를 찍은 뒤 default에서 D까지 찍고 끝난다. 따라서 BCD 가 출력된다.",
+    "difficulty": 3,
+    "verificationStatus": "single_source",
+    "verificationCount": 1,
+    "basedOn": null,
+    "active": true
+  },
+  {
+    "id": "2023-2-006",
+    "sourceType": "past_exam",
+    "sourceLabel": "2023년 2회 실기 복원 (newbt.kr 문제은행)",
+    "sourceUrls": [
+      "https://newbt.kr/시험/정보처리기사 실기/2023%EB%85%84+2%ED%9A%8C/%EC%98%A4%EC%86%8C%ED%94%84%ED%8A%B80506",
+      "https://newbt.kr/문제/56455"
+    ],
+    "year": 2023,
+    "round": 2,
+    "category": "testing",
+    "subcategory": null,
+    "questionType": "term",
+    "question": "다음은 테스트 커버리지에 대한 내용이다. 내용을 보고 보기에 알맞는 '기호' 를 고르시오",
+    "code": "- 프로그램 내에 있는 결정포인트 내의 모든 각 개별 조건식에 대한 모든 가능한 결과 (참/거짓)에 대해 적어도 한번 수행한다.\n\n- 소프트웨어 테스트 수행 시 소스코드를 어느 수준까지 수행하였는가 를 나타내는 기준을 나타낸다.\n\n- 실제 업무에서는 다양한 툴을 사용하여 테스팅 수행한다.\n\n- True/False에 충분한 영향을 줄 수 없는 경우가 발생 가능한 한계점을 지닌다.\n\n***************************************************************************************\n[보기]\nㄱ. 구문 커버리지\nㄴ. 경로 커버리지\nㄷ. 조건/결정 커버리지\nㄹ. 변형 조건/결정 커버리지\nㅂ. 다중 조건 커버리지\nㅅ. 결정 커버리지\nㅇ. 조건 커버리지",
+    "codeLang": null,
+    "image": null,
+    "answer": [
+      "ㅇ"
+    ],
+    "acceptedAnswers": [],
+    "choices": null,
+    "hint": null,
+    "caseSensitive": false,
+    "orderSensitive": false,
+    "explanation": "조건 커버리지(ㅇ)다. 조건문 안의 개별 조건식 각각이 참·거짓을 모두 갖도록 테스트한다. 다만 개별 조건만 뒤집다 보면 조건문 전체의 결과(True/False)는 한쪽만 나올 수도 있어서, 결정 커버리지를 항상 포함하지는 못한다는 한계가 설명에 나온 그대로다.",
+    "difficulty": 3,
+    "verificationStatus": "single_source",
+    "verificationCount": 1,
+    "basedOn": null,
+    "active": true
+  },
+  {
+    "id": "2023-2-007",
+    "sourceType": "past_exam",
+    "sourceLabel": "2023년 2회 실기 복원 (newbt.kr 문제은행)",
+    "sourceUrls": [
+      "https://newbt.kr/시험/정보처리기사 실기/2023%EB%85%84+2%ED%9A%8C/%EC%98%A4%EC%86%8C%ED%94%84%ED%8A%B80506",
+      "https://newbt.kr/문제/56532"
+    ],
+    "year": 2023,
+    "round": 2,
+    "category": "programming_language",
+    "subcategory": null,
+    "questionType": "term",
+    "question": "다음 소스코드의 알맞은 출력 결과를 작성하시오",
+    "code": null,
+    "codeLang": null,
+    "image": "/question-images/2023-2-007.png",
+    "answer": [
+      "505"
+    ],
+    "acceptedAnswers": [],
+    "choices": null,
+    "hint": null,
+    "caseSensitive": false,
+    "orderSensitive": false,
+    "explanation": "1부터 2023까지 중 4로 나누어떨어지는 수의 개수를 세는 코드다. 2023을 4로 나눈 몫이 505이므로 4, 8, 12 … 2020 까지 505개가 있다. 따라서 505가 출력된다.",
+    "difficulty": 3,
+    "verificationStatus": "single_source",
+    "verificationCount": 1,
+    "basedOn": null,
+    "active": true
+  },
+  {
+    "id": "2023-2-008",
+    "sourceType": "past_exam",
+    "sourceLabel": "2023년 2회 실기 복원 (newbt.kr 문제은행)",
+    "sourceUrls": [
+      "https://newbt.kr/시험/정보처리기사 실기/2023%EB%85%84+2%ED%9A%8C/%EC%98%A4%EC%86%8C%ED%94%84%ED%8A%B80506",
+      "https://newbt.kr/문제/56457"
+    ],
+    "year": 2023,
+    "round": 2,
+    "category": "packaging",
+    "subcategory": "코드 난독화",
+    "questionType": "short_answer",
+    "question": "다음 내용에 해당하는 알맞는 답을 작성하시오.",
+    "code": "- 소프트웨어에서 워터마크 삭제  등과 같이 소프트웨어가 불법으로 변경(unauthorized modifications)되었을 경우, 그 소프트웨어가 정상 수행되지 않게 하는 기법이다.\n\n- 소프트웨어 변조 공격을 방어하기 위해 프로그램에 변조검증코드(tamper-proofing code)를 삽입하는 것도 한 방법으로, 변조검증코드의 용도는 첫째 프로그램이 변경되었는지를 탐지하는 것이고, 둘째는 변조가 탐지되었다면 프로그램이 실행되지 않게 한다.\n\n- 소프트웨어의 위변조 방지 역공학 기술의 일종으로 디지털 콘텐츠의 관련 산업이나 전자상거래 또는 보호해야 할 소프트웨어가 있는 다양한 산업 분야에 적용된다.",
+    "codeLang": null,
+    "image": null,
+    "answer": [
+      "템퍼 프루핑(Tamper proofing)"
+    ],
+    "acceptedAnswers": [
+      "템퍼 프루핑",
+      "Tamper proofing"
+    ],
+    "choices": null,
+    "hint": null,
+    "caseSensitive": false,
+    "orderSensitive": false,
+    "explanation": "템퍼 프루핑(Tamper Proofing)이다. 프로그램에 변조 검증 코드를 심어두고, 실행할 때 자기 자신이 바뀌었는지 검사해 변조가 확인되면 아예 동작하지 않게 만드는 기법이다. 워터마킹이 '누구 것인지 표시'하는 것이라면 템퍼 프루핑은 '건드리면 못 쓰게' 하는 것이다.",
+    "difficulty": 3,
+    "verificationStatus": "single_source",
+    "verificationCount": 1,
+    "basedOn": null,
+    "active": true
+  },
+  {
+    "id": "2023-2-009",
+    "sourceType": "past_exam",
+    "sourceLabel": "2023년 2회 실기 복원 (newbt.kr 문제은행)",
+    "sourceUrls": [
+      "https://newbt.kr/시험/정보처리기사 실기/2023%EB%85%84+2%ED%9A%8C/%EC%98%A4%EC%86%8C%ED%94%84%ED%8A%B80506",
+      "https://newbt.kr/문제/56458"
+    ],
+    "year": 2023,
+    "round": 2,
+    "category": "programming_language",
+    "subcategory": "C 언어",
+    "questionType": "term",
+    "question": "다음은 C언어 문제이다. \n알맞은 출력값을 작성하시오.",
+    "code": null,
+    "codeLang": null,
+    "image": "/question-images/2023-2-009.png",
+    "answer": [
+      "213465"
+    ],
+    "acceptedAnswers": [],
+    "choices": null,
+    "hint": null,
+    "caseSensitive": false,
+    "orderSensitive": false,
+    "explanation": "into()는 push, take()는 pop인 스택이다. 5와 2를 넣은 뒤 반복문 안에서 꺼내고 넣기를 반복한다. 2를 꺼내 출력, 4와 1을 넣고 1을 꺼내 출력, 3을 넣고 3과 4를 차례로 꺼내 출력, 6을 넣고 6과 5를 차례로 꺼내 출력한다. 나중에 넣은 것이 먼저 나오는 LIFO라 213465 가 된다.",
+    "difficulty": 3,
+    "verificationStatus": "single_source",
+    "verificationCount": 1,
+    "basedOn": null,
+    "active": true
+  },
+  {
+    "id": "2023-2-010",
+    "sourceType": "past_exam",
+    "sourceLabel": "2023년 2회 실기 복원 (newbt.kr 문제은행)",
+    "sourceUrls": [
+      "https://newbt.kr/시험/정보처리기사 실기/2023%EB%85%84+2%ED%9A%8C/%EC%98%A4%EC%86%8C%ED%94%84%ED%8A%B80506",
+      "https://newbt.kr/문제/56459"
+    ],
+    "year": 2023,
+    "round": 2,
+    "category": "data_io",
+    "subcategory": "데이터베이스 스키마 설계",
+    "questionType": "short_answer",
+    "question": "다음은 DB 설계 순서에 관한 내용이다. \n보기를 이용하여 괄호안에 알맞은 내용을 작성하시오.",
+    "code": "[보기]\n구현, 요구조건 분석, 개념적 설계, 물리적 설계, 논리적 설계",
+    "codeLang": null,
+    "image": "/question-images/2023-2-010.png",
+    "answer": [
+      "요구조건 분석"
+    ],
+    "acceptedAnswers": [
+      "개념적 설계",
+      "논리적 설계",
+      "물리적 설계",
+      "구현"
+    ],
+    "choices": null,
+    "hint": null,
+    "caseSensitive": false,
+    "orderSensitive": false,
+    "explanation": "데이터베이스 설계는 요구조건 분석 → 개념적 설계 → 논리적 설계 → 물리적 설계 → 구현 순이다. 맨 앞의 요구조건 분석에서 무엇을 저장하고 어떻게 쓸지를 정리한 뒤, 개념적 설계에서 E-R 다이어그램을 그리고, 논리적 설계에서 목표 DBMS의 스키마로 바꾸며 정규화하고, 물리적 설계에서 저장 구조와 인덱스를 정한다.",
+    "difficulty": 3,
+    "verificationStatus": "single_source",
+    "verificationCount": 1,
+    "basedOn": null,
+    "active": true
+  },
+  {
+    "id": "2023-2-011",
+    "sourceType": "past_exam",
+    "sourceLabel": "2023년 2회 실기 복원 (newbt.kr 문제은행)",
+    "sourceUrls": [
+      "https://newbt.kr/시험/정보처리기사 실기/2023%EB%85%84+2%ED%9A%8C/%EC%98%A4%EC%86%8C%ED%94%84%ED%8A%B80506",
+      "https://newbt.kr/문제/56460"
+    ],
+    "year": 2023,
+    "round": 2,
+    "category": "programming_language",
+    "subcategory": null,
+    "questionType": "short_answer",
+    "question": "다음은 디자인 패턴에 관한 문제이다. 보기를 참고하여 알맞는 답을 작성하시오.",
+    "code": "[1]\n- 생성자가 여러 차례 호출되더라도 실제로 생성되는 객체는 하나이고 최초 생성 이후에 호출된 생성자는 최초의 생성자가 생성한 객체를 리턴한다.\n- 주로 공통된 객체를 여러개 생성해서 사용하는 DBCP(DataBase Connection Pool)와 같은 상황에서 많이 사용한다.\n\n\n[2]\n- 호스트 객체의 내부 상태에 접근할 수 있는 방법을 제공하여 호스트 객체에 연산을 추가할 수 있도록 한다.\n- 이 패턴은 보통 합성 구조의 원소들과 상호 작용하는 데 사용되며, 기존 코드를 변경하지 않고 새로운 기능을 추가하는 방법이다.",
+    "codeLang": null,
+    "image": "/question-images/2023-2-011.png",
+    "answer": [
+      "Singleton",
+      "Visitor"
+    ],
+    "acceptedAnswers": [],
+    "choices": null,
+    "hint": null,
+    "caseSensitive": false,
+    "orderSensitive": true,
+    "explanation": "[1] 싱글톤(Singleton) 패턴이다. 생성자를 여러 번 불러도 객체는 하나만 만들어지고 이후에는 그 객체를 계속 돌려준다. DB 커넥션 풀처럼 공용 자원을 하나만 두어야 할 때 쓴다. [2] 방문자(Visitor) 패턴이다. 객체 구조는 그대로 두고 연산만 따로 클래스로 빼내어, 기존 코드를 고치지 않고 새로운 기능을 덧붙일 수 있게 한다. 싱글톤은 생성 패턴, 방문자는 행위 패턴이다.",
+    "difficulty": 3,
+    "verificationStatus": "single_source",
+    "verificationCount": 1,
+    "basedOn": null,
+    "active": true
+  },
+  {
+    "id": "2023-2-012",
+    "sourceType": "past_exam",
+    "sourceLabel": "2023년 2회 실기 복원 (newbt.kr 문제은행)",
+    "sourceUrls": [
+      "https://newbt.kr/시험/정보처리기사 실기/2023%EB%85%84+2%ED%9A%8C/%EC%98%A4%EC%86%8C%ED%94%84%ED%8A%B80506",
+      "https://newbt.kr/문제/56461"
+    ],
+    "year": 2023,
+    "round": 2,
+    "category": "security",
+    "subcategory": "해밍 코드",
+    "questionType": "short_answer",
+    "question": "다음 내용에서 설명하는 문제에 대해 보기에 알맞는 답을 골라 작성하시오.",
+    "code": "[보기]\nEAC, FEC, hamming, CRC, PDS, parity, BEC\n\n***************************************************************************************\n\n( 1 ) Code는 데이터 전송시 1 비트의 에러를 정정할 수 있는, 오류정정부호의 일종으로 미국의 Bell 연구소의 Hamming에 의해 고안되었다.\n선형블록부호 및 순회부호에 속에 속한다.\n\n\n\n( 2 ) 은/는 송신측이 전송할 문자나 프레임에 부가적 정보(Redundancy)를 첨가하여 전송하고 수신측이 이 부가적 정보를 이용하여 에러검출 및 에러정정을 하는 방식이다.\n\n\n\n( 3 ) 은/는 공격자가 전자 메일을 사용하여 상대방이 금전을 보내거나 기밀 회사 정보를 누설하도록 유도하는 사이버 범죄의 일종이다.\n\n공격자는 신뢰할 수 있는 인물로 가장한 다음 가짜 청구서의 지불을 요청하거나 다른 사기에서 사용할 중요한 데이터를 요구한다.\n\n\n\n( 4 ) 은/는 데이터가 저장장치 내의 한 장소에서 다른 장소로 이동되거나, 컴퓨터들간에 전송될 때, 데이터가 유실 또는 손상되었는지 여부를 점검하는 기술과 관련된 용어이다.\n\n\n\n( 5 ) 은/는 네트워크 등을 통하여 데이터를 전송할 때 전송된 데이터에 오류가 있는지를 확인하기 위한 체크값을 결정하는 방식을 말한다.",
+    "codeLang": null,
+    "image": null,
+    "answer": [
+      "hamming",
+      "FEC",
+      "BEC",
+      "parity",
+      "CRC"
+    ],
+    "acceptedAnswers": [],
+    "choices": null,
+    "hint": null,
+    "caseSensitive": false,
+    "orderSensitive": true,
+    "explanation": "(1) 1비트 오류를 스스로 정정할 수 있는 해밍(Hamming) 코드. (2) 수신측이 스스로 고칠 수 있도록 여분 정보를 함께 보내는 전진 오류 수정 FEC. (3) 업무 메일로 위장해 송금이나 기밀을 빼내는 사기는 BEC(Business Email Compromise). (4) 데이터 이동·전송 중 손상 여부를 점검하는 패리티(parity). (5) 전송 데이터의 체크값을 계산하는 방식이 CRC다. 오류 제어는 스스로 고치는 FEC와 재전송을 요청하는 BEC/ARQ로 나뉜다.",
+    "difficulty": 3,
+    "verificationStatus": "single_source",
+    "verificationCount": 1,
+    "basedOn": null,
+    "active": true
+  },
+  {
+    "id": "2023-2-013",
+    "sourceType": "past_exam",
+    "sourceLabel": "2023년 2회 실기 복원 (newbt.kr 문제은행)",
+    "sourceUrls": [
+      "https://newbt.kr/시험/정보처리기사 실기/2023%EB%85%84+2%ED%9A%8C/%EC%98%A4%EC%86%8C%ED%94%84%ED%8A%B80506",
+      "https://newbt.kr/문제/56462"
+    ],
+    "year": 2023,
+    "round": 2,
+    "category": "app_sw_basics",
+    "subcategory": null,
+    "questionType": "short_answer",
+    "question": "다음은 HDLC 프로토콜에 대한 설명이다. 보기 안에 알맞는 '기호' 를 골라 작성하시오.",
+    "code": "[보기]\nㄱ. 연결제어     ㄴ. 감독     ㄷ. 정보     ㄹ. 양방향 응답     ㅁ. 익명     ㅂ. 비번호\nㅅ. 릴레이    ㅇ. 동기균형     ㅈ. 동기응답    ㅊ. 비동기균형     ㅋ. 비동기응답\n\n***************************************************************************************\n\n( 1 ) 프레임은 Seq, Next, P/F의 필드를 가진다. 또한 맨 처음 비트를 0으로 가진다. Seq는 송신용 순서번호를 가지고 있다. Next는 응답용 순서번호를 가진다. P/F는 P가 1로 설정된 경우 주국에서 종국에 데이터 전송을 허용하는 것을 의미하고 F가 1로 설정된 경우 종국에서 주국으로 데이터 전송을 하는 것을 의미한다.\n\n\n( 2 ) 프레임은 맨 앞의 필드가 1로 되어 있어 정보 프레임이 아니라는 것을 나타내고 다음 비트가 0이 나와있다. Type의 경우에는 2비트를 가지고 있어 4가지의 종류로 나누어진다.  데이터를 보내는 역할이 아니라 응답의 기능을 수행하므로 Seq에 대한 값은 필요가 없고 다음 프레임을 요구하는 Next만 존재한다.\n\n\n( 3 ) 프레임은 순서 번호가 없는 프레임을 의미한다. 첫 번째 비트와 두 번째 비트가 모두 1로 설정되어 있다. 여러 종류를 가지고 있는데 Type의 2비트와 Modifier의 3비트를 합쳐 5비트를 통해 종류를 나눈다.\n\n\n( 4 ) 은/는 두 호스트 모두 혼합국으로 동작한다. 양쪽에서 명령과 응답을 전송할 수 있다.\n\n\n( 5 ) 은/는 불균형 모드로 주국의 허락 없이 종국에서 데이터를 전송할 수 있다.",
+    "codeLang": null,
+    "image": null,
+    "answer": [
+      "ㄷ",
+      "ㄴ",
+      "ㅂ",
+      "ㅊ",
+      "ㅋ"
+    ],
+    "acceptedAnswers": [],
+    "choices": null,
+    "hint": null,
+    "caseSensitive": false,
+    "orderSensitive": true,
+    "explanation": "HDLC 프레임은 첫 비트로 구분한다. (1) 첫 비트가 0이면 정보(I) 프레임으로 실제 데이터를 나르며 송신 순서번호 Seq와 응답 순서번호 Next를 모두 갖는다. (2) 10으로 시작하면 감독(S) 프레임으로 데이터 없이 응답만 하므로 Next만 있다. (3) 11로 시작하면 순서번호가 없는 비번호(U) 프레임이다. 동작 모드로는 (4) 비동기 균형 모드(ABM)와 (5) 비동기 응답 모드(ARM)가 있다.",
+    "difficulty": 3,
+    "verificationStatus": "single_source",
+    "verificationCount": 1,
+    "basedOn": null,
+    "active": true
+  },
+  {
+    "id": "2023-2-014",
+    "sourceType": "past_exam",
+    "sourceLabel": "2023년 2회 실기 복원 (newbt.kr 문제은행)",
+    "sourceUrls": [
+      "https://newbt.kr/시험/정보처리기사 실기/2023%EB%85%84+2%ED%9A%8C/%EC%98%A4%EC%86%8C%ED%94%84%ED%8A%B80506",
+      "https://newbt.kr/문제/56463"
+    ],
+    "year": 2023,
+    "round": 2,
+    "category": "programming_language",
+    "subcategory": null,
+    "questionType": "short_answer",
+    "question": "다음은 자바 프로그래밍에 대한 문제이다. 알맞은 출력값을 작성하시오.\n단, 프로그래밍 언어 특성에 따른 대·소문자를 반드시 구별해서 작성하시오.",
+    "code": null,
+    "codeLang": null,
+    "image": "/question-images/2023-2-014.png",
+    "answer": [
+      "true\nfalse\ntrue\ntrue"
+    ],
+    "acceptedAnswers": [
+      "true false true true",
+      "truefalsetruetrue"
+    ],
+    "choices": null,
+    "hint": null,
+    "caseSensitive": false,
+    "orderSensitive": false,
+    "explanation": "문자열 리터럴은 상수 풀에 저장되어 같은 내용이면 같은 객체를 가리키지만, new String()은 매번 새 객체를 만든다. 따라서 str1 == str2 는 true, str1 == str3 는 주소가 달라 false다. 반면 equals()는 내용을 비교하므로 str1.equals(str3)과 str2.equals(str3)은 모두 true다. 결과는 true, false, true, true 네 줄이다.",
+    "difficulty": 3,
+    "verificationStatus": "single_source",
+    "verificationCount": 1,
+    "basedOn": null,
+    "active": true
+  },
+  {
+    "id": "2023-2-015",
+    "sourceType": "past_exam",
+    "sourceLabel": "2023년 2회 실기 복원 (newbt.kr 문제은행)",
+    "sourceUrls": [
+      "https://newbt.kr/시험/정보처리기사 실기/2023%EB%85%84+2%ED%9A%8C/%EC%98%A4%EC%86%8C%ED%94%84%ED%8A%B80506",
+      "https://newbt.kr/문제/56464"
+    ],
+    "year": 2023,
+    "round": 2,
+    "category": "security",
+    "subcategory": "암호화 알고리즘",
+    "questionType": "short_answer",
+    "question": "다음 보기는 암호화 알고리즘에 대한 내용이다. \n대칭키와 비대칭키에 해당하는 용어를 보기의 내용 참고하여 작성하시오.",
+    "code": "[보기]\nDES, RSA, AES, ECC, PKI, ARIA, SEED\n\n*****************************************\n- 대칭키 : (          )\n\n- 비대칭키 : (          )",
+    "codeLang": null,
+    "image": null,
+    "answer": [
+      "대칭키: DES, AES, ARIA, SEED",
+      "비대칭키: RSA, ECC"
+    ],
+    "acceptedAnswers": [
+      "DES, AES, ARIA, SEED",
+      "RSA, ECC"
+    ],
+    "choices": null,
+    "hint": null,
+    "caseSensitive": false,
+    "orderSensitive": true,
+    "explanation": "대칭키는 암호화와 복호화에 같은 키를 쓰는 방식으로 DES·AES·ARIA·SEED가 여기에 속한다. 비대칭키(공개키)는 공개키로 잠그고 개인키로 여는 방식으로 RSA와 ECC가 해당한다. 보기의 PKI는 알고리즘이 아니라 공개키를 관리·배포하는 기반 구조라서 어느 쪽에도 넣지 않는다.",
+    "difficulty": 3,
+    "verificationStatus": "single_source",
+    "verificationCount": 1,
+    "basedOn": null,
+    "active": true
+  },
+  {
+    "id": "2023-2-016",
+    "sourceType": "past_exam",
+    "sourceLabel": "2023년 2회 실기 복원 (newbt.kr 문제은행)",
+    "sourceUrls": [
+      "https://newbt.kr/시험/정보처리기사 실기/2023%EB%85%84+2%ED%9A%8C/%EC%98%A4%EC%86%8C%ED%94%84%ED%8A%B80506",
+      "https://newbt.kr/문제/56465"
+    ],
+    "year": 2023,
+    "round": 2,
+    "category": "security",
+    "subcategory": "해시",
+    "questionType": "term",
+    "question": "다음 괄호 안에 알맞는 답을 작성하시오.",
+    "code": "- ( ) 란 임의의 크기를 가진 데이터(Key)를 고정된 크기의 데이터(Value)로 변화시켜 저장하는 것이다.\n- 키에 대한 ( ) 값을 사용하여 값을 저장하고 키-값 쌍의 갯수에 따라 동적으로 크기가 증가한다.\n- ( ) 값 자체를 index로 사용하기 때문에 평군 시간복잡도가 O(1) 로 매우 빠르다\n- ( ) 함수는 임의의 길이의 데이터를 고정된 길이의 데이터로 매핑하는 함수이다.\n- ( ) 함수는 큰 파일에서 중복되는 레코드를 찾을 수 있기 때문에 데이터베이스 검색이나 테이블 검색의 속도를 가속할 수 있다.",
+    "codeLang": null,
+    "image": null,
+    "answer": [
+      "해시(hash)"
+    ],
+    "acceptedAnswers": [
+      "해시",
+      "hash"
+    ],
+    "choices": null,
+    "hint": null,
+    "caseSensitive": false,
+    "orderSensitive": false,
+    "explanation": "해시(Hash)다. 임의 길이의 키를 고정 길이 값으로 바꿔 그 값을 그대로 저장 위치(인덱스)로 쓰기 때문에 평균 O(1)에 찾을 수 있다. 서로 다른 키가 같은 해시값을 갖는 충돌이 생길 수 있어 체이닝이나 개방 주소법으로 해결한다.",
+    "difficulty": 3,
+    "verificationStatus": "single_source",
+    "verificationCount": 1,
+    "basedOn": null,
+    "active": true
+  },
+  {
+    "id": "2023-2-017",
+    "sourceType": "past_exam",
+    "sourceLabel": "2023년 2회 실기 복원 (newbt.kr 문제은행)",
+    "sourceUrls": [
+      "https://newbt.kr/시험/정보처리기사 실기/2023%EB%85%84+2%ED%9A%8C/%EC%98%A4%EC%86%8C%ED%94%84%ED%8A%B80506",
+      "https://newbt.kr/문제/56466"
+    ],
+    "year": 2023,
+    "round": 2,
+    "category": "sql",
+    "subcategory": null,
+    "questionType": "term",
+    "question": "다음 조건을 참고하여, SQL문에서 괄호안에 알맞는 단어를 작성하시오.",
+    "code": "[조건]\n학생 테이블을 참조하는 다른 VIEW나 제약 조건까지 모두 삭제되어야 한다.\n단, 용어의 대·소문자는 상관하지 않는다.\n***************************************************************************************\n\nDROP VIEW 학생 (         )",
+    "codeLang": null,
+    "image": null,
+    "answer": [
+      "CASCADE"
+    ],
+    "acceptedAnswers": [],
+    "choices": null,
+    "hint": null,
+    "caseSensitive": false,
+    "orderSensitive": false,
+    "explanation": "CASCADE다. DROP VIEW/TABLE 뒤에 붙이면 그 대상을 참조하는 다른 뷰나 제약조건까지 함께 지운다. 반대로 RESTRICT는 참조하는 것이 하나라도 있으면 삭제를 거부한다. 둘 중 무엇을 붙이느냐로 연쇄 삭제 여부가 갈린다.",
+    "difficulty": 3,
+    "verificationStatus": "single_source",
+    "verificationCount": 1,
+    "basedOn": null,
+    "active": true
+  },
+  {
+    "id": "2023-2-018",
+    "sourceType": "past_exam",
+    "sourceLabel": "2023년 2회 실기 복원 (newbt.kr 문제은행)",
+    "sourceUrls": [
+      "https://newbt.kr/시험/정보처리기사 실기/2023%EB%85%84+2%ED%9A%8C/%EC%98%A4%EC%86%8C%ED%94%84%ED%8A%B80506",
+      "https://newbt.kr/문제/56533"
+    ],
+    "year": 2023,
+    "round": 2,
+    "category": "programming_language",
+    "subcategory": "정렬",
+    "questionType": "term",
+    "question": "다음 코드는 선택정렬 구현에 관한 문제이다. \n빈칸에 알맞는 연산자를 보기에서 골라 작성하시오.",
+    "code": null,
+    "codeLang": null,
+    "image": "/question-images/2023-2-018.png",
+    "answer": [
+      ">"
+    ],
+    "acceptedAnswers": [],
+    "choices": null,
+    "hint": null,
+    "caseSensitive": false,
+    "orderSensitive": false,
+    "explanation": "선택 정렬에서 오름차순으로 만들려면 앞의 값이 뒤의 값보다 클 때 자리를 바꿔야 한다. 따라서 조건은 E[i] > E[j] 이고 괄호에는 > 가 들어간다. 부등호를 뒤집으면 내림차순이 된다.",
+    "difficulty": 3,
+    "verificationStatus": "single_source",
+    "verificationCount": 1,
+    "basedOn": null,
+    "active": true
+  },
+  {
+    "id": "2023-2-019",
+    "sourceType": "past_exam",
+    "sourceLabel": "2023년 2회 실기 복원 (newbt.kr 문제은행)",
+    "sourceUrls": [
+      "https://newbt.kr/시험/정보처리기사 실기/2023%EB%85%84+2%ED%9A%8C/%EC%98%A4%EC%86%8C%ED%94%84%ED%8A%B80506",
+      "https://newbt.kr/문제/56468"
+    ],
+    "year": 2023,
+    "round": 2,
+    "category": "programming_language",
+    "subcategory": null,
+    "questionType": "term",
+    "question": "다음 Python 코드에 알맞는 출력값을 작성하시오.",
+    "code": null,
+    "codeLang": null,
+    "image": "/question-images/2023-2-019.png",
+    "answer": [
+      "engneing"
+    ],
+    "acceptedAnswers": [],
+    "choices": null,
+    "hint": null,
+    "caseSensitive": false,
+    "orderSensitive": false,
+    "explanation": "문자열 슬라이싱 문제다. a = \"engineer information processing\" 에서 a[:3]은 앞 세 글자 \"eng\", a[4:6]은 인덱스 4와 5인 \"ne\", a[28:]은 인덱스 28부터 끝까지인 \"ing\"이다. 세 조각을 이어 붙이면 engneing 이 된다. 끝 인덱스는 포함하지 않는다는 점만 조심하면 된다.",
+    "difficulty": 3,
+    "verificationStatus": "single_source",
+    "verificationCount": 1,
+    "basedOn": null,
+    "active": true
+  },
+  {
+    "id": "2023-2-020",
+    "sourceType": "past_exam",
+    "sourceLabel": "2023년 2회 실기 복원 (newbt.kr 문제은행)",
+    "sourceUrls": [
+      "https://newbt.kr/시험/정보처리기사 실기/2023%EB%85%84+2%ED%9A%8C/%EC%98%A4%EC%86%8C%ED%94%84%ED%8A%B80506",
+      "https://newbt.kr/문제/56469"
+    ],
+    "year": 2023,
+    "round": 2,
+    "category": "security",
+    "subcategory": "통합 테스트",
+    "questionType": "short_answer",
+    "question": "다음 설명에 대한 알맞는 답을 작성하시오.",
+    "code": "[1]\n- 하향식 테스트 시 상위 모듈은 존재하나 하위 모듈이 없는 경우의 테스트를 위해 임시 제공되는 모듈이다.\n- 특별한 목적의 소프트웨어를 구현하는 것으로 컴포넌트를 개발하거나 테스트할 때 사용된다.\n- 서버-클라이언트 구조에서 서버만 구현된 상태로 테스트를 해보고 싶을때 단순히 값만 넘겨주는 가상의 클라이언트를 만들어서 테스트 할 수 있다.\n\n[2]\n- 상향식 테스트 시 상위 모듈 없이 하위 모듈이 존재할 때 하위 모듈 구동 시 자료 입출력을 제어하기 위한 제어 모듈(소프트웨어)이다.\n- 서버-클라이언트 구조에서 클라이언트만 구현된 상태로 테스트를 해보고 싶을때 접속 인증 등의 간단한 기능만 하는 가상의 서버를 만들어서 테스트 할 수 있다.",
+    "codeLang": null,
+    "image": null,
+    "answer": [
+      "스텁",
+      "드라이버"
+    ],
+    "acceptedAnswers": [
+      "(테스트 스텁, 테스트 드라이버)"
+    ],
+    "choices": null,
+    "hint": null,
+    "caseSensitive": false,
+    "orderSensitive": true,
+    "explanation": "[1] 스텁(Stub)은 하향식 통합에서 아직 안 만든 하위 모듈을 대신해 값만 돌려주는 가짜 모듈이다. [2] 드라이버(Driver)는 상향식 통합에서 아직 없는 상위 모듈을 대신해 하위 모듈을 불러주고 입출력을 넘겨주는 모듈이다. 하향식은 스텁, 상향식은 드라이버로 짝지어 외운다.",
+    "difficulty": 3,
+    "verificationStatus": "single_source",
+    "verificationCount": 1,
+    "basedOn": null,
+    "active": true
+  },
+  {
+    "id": "2023-3-001",
+    "sourceType": "past_exam",
+    "sourceLabel": "2023년 3회 실기 복원 (newbt.kr 문제은행)",
+    "sourceUrls": [
+      "https://newbt.kr/시험/정보처리기사 실기/2023%EB%85%84+3%ED%9A%8C/%EC%98%A4%EC%86%8C%ED%94%84%ED%8A%B80506",
+      "https://newbt.kr/문제/56470"
+    ],
+    "year": 2023,
+    "round": 3,
+    "category": "programming_language",
+    "subcategory": "자바 다형성",
+    "questionType": "term",
+    "question": "다음은 Java 코드로 작성한 프로그램이다. \n올바른 출력 결과를 작성하시오.",
+    "code": null,
+    "codeLang": null,
+    "image": "/question-images/2023-3-001.png",
+    "answer": [
+      "BDCDD"
+    ],
+    "acceptedAnswers": [],
+    "choices": null,
+    "hint": null,
+    "caseSensitive": false,
+    "orderSensitive": false,
+    "explanation": "오버라이딩된 메서드는 참조 변수의 타입이 아니라 실제 객체의 것이 실행된다는 점이 핵심이다. b.paint()는 B의 paint()를 부르고, 그 안의 super.draw()가 A의 draw()를 실행해 B를 찍은 뒤 다시 draw()를 부르는데 실제 객체가 B이므로 B의 draw()가 돌아 D를 찍는다. 이어 C를 찍고 this.draw()로 다시 D를 찍어 여기까지 BDCD가 된다. 마지막으로 main의 b.draw()가 D를 한 번 더 찍어 BDCDD 가 출력된다.",
+    "difficulty": 3,
+    "verificationStatus": "single_source",
+    "verificationCount": 1,
+    "basedOn": null,
+    "active": true
+  },
+  {
+    "id": "2023-3-002",
+    "sourceType": "past_exam",
+    "sourceLabel": "2023년 3회 실기 복원 (newbt.kr 문제은행)",
+    "sourceUrls": [
+      "https://newbt.kr/시험/정보처리기사 실기/2023%EB%85%84+3%ED%9A%8C/%EC%98%A4%EC%86%8C%ED%94%84%ED%8A%B80506",
+      "https://newbt.kr/문제/56471"
+    ],
+    "year": 2023,
+    "round": 3,
+    "category": "security",
+    "subcategory": "OAuth",
+    "questionType": "term",
+    "question": "다음 설명하는 용어를 보기에 맞게 골라 '기호'를 1개 작성하시오.",
+    "code": "[보기]\nㄱ.NFT                            ㄴ.JWT\nㄷ.SAML                         ㄹ.accessToken\nㅁ.SSO                            ㅂ.OIDC\nㅅ.Autentication             ㅇ. OAuth\nㅈ.Cookie                       ㅊ.Refresh Token\n\n***************************************************************************************\n- 사용자가 사용자 이름 및 암호와 같은 자격 증명을 공유하지 않고도 타사 애플리케이션이 데이터 또는 리소스에 액세스할 수 있도록 권한을 부여할 수 있는 개방형 표준 프로토콜이다.\n\n- 사용자가 데이터에 대한 제어를 유지하면서 리소스에 대한 액세스 권한을 부여할 수 있는 안전하고 표준화된 방법을 제공하며, 액세스 토큰을 사용하여 타사 애플리케이션에 리소스에 대한 액세스 권한을 부여하는 메커니즘을 사용자에게 제공하는 방식으로 작동한다.\n\n- 사용자가 응용 프로그램에 대한 액세스 권한을 부여하면 응용 프로그램은 사용자를 대신하여 사용자의 리소스 또는 데이터에 액세스하는 데 사용할 수 있는 액세스 토큰을 받는다.\n\n- 암호와 같은 사용자의 자격 증명은 타사 응용 프로그램과 공유되지 않으며, 클라우드 스토리지 서비스, 온라인 마켓 플레이스 및 금융 서비스를 포함한 다른 많은 응용 프로그램 및 서비스에서도 사용된다.\n\n- Facebook, Twitter 및 LinkedIn과 같은 소셜 미디어 플랫폼에서 널리 사용되어 사용자가 소셜 미디어 데이터에 대한 액세스 권한을 타사 애플리케이션에 부여할 수 있도록 한다.\n\n- 타사 애플리케이션에 대한 사용자 자격 증명의 노출을 최소화하여 향상된 보안, 간소화된 애플리케이션 개발, 사용자가 리소스에 대한 액세스 권한을 쉽게 부여하거나 취소할 수 있도록 하여 향상된 사용자 환경 등 여러 가지 이점을 제공한다.",
+    "codeLang": null,
+    "image": null,
+    "answer": [
+      "ㅇ"
+    ],
+    "acceptedAnswers": [
+      "(ㅇ. OAuth )"
+    ],
+    "choices": null,
+    "hint": null,
+    "caseSensitive": false,
+    "orderSensitive": false,
+    "explanation": "OAuth(ㅇ)다. 아이디·비밀번호를 제3자 앱에 넘기지 않고도 '내 자원에 접근해도 좋다'는 권한만 위임하는 표준이다. 앱은 대신 액세스 토큰을 받아 사용자를 대신해 자원에 접근한다. 인증(누구인지)이 아니라 인가(무엇을 해도 되는지)를 다루는 프로토콜이라는 점이 핵심이며, 여기에 인증을 얹은 것이 OIDC다.",
+    "difficulty": 3,
+    "verificationStatus": "single_source",
+    "verificationCount": 1,
+    "basedOn": null,
+    "active": true
+  },
+  {
+    "id": "2023-3-003",
+    "sourceType": "past_exam",
+    "sourceLabel": "2023년 3회 실기 복원 (newbt.kr 문제은행)",
+    "sourceUrls": [
+      "https://newbt.kr/시험/정보처리기사 실기/2023%EB%85%84+3%ED%9A%8C/%EC%98%A4%EC%86%8C%ED%94%84%ED%8A%B80506",
+      "https://newbt.kr/문제/56472"
+    ],
+    "year": 2023,
+    "round": 3,
+    "category": "app_sw_basics",
+    "subcategory": "리눅스 퍼미션",
+    "questionType": "short_answer",
+    "question": "리눅스(Linux)에서 사용자에게 읽기/쓰기/실행 권한을 부여하고, \n그룹에게는 읽기/실행을 부여하고, \n그 이외에는 실행 권한을 test.txt 파일에 부여하는 위한 명령어는 다음과 같다. \n빈칸에 들어갈 답을 작성하시오. (8진법 사용)",
+    "code": "(    ①    ) (    ②    ) test.txt",
+    "codeLang": null,
+    "image": null,
+    "answer": [
+      "chmod",
+      "751"
+    ],
+    "acceptedAnswers": [],
+    "choices": null,
+    "hint": null,
+    "caseSensitive": false,
+    "orderSensitive": true,
+    "explanation": "chmod는 권한 변경 명령이고 8진수 세 자리는 각각 소유자·그룹·기타의 권한이다. 읽기 4, 쓰기 2, 실행 1을 더해 만든다. 소유자는 읽기+쓰기+실행 = 4+2+1 = 7, 그룹은 읽기+실행 = 4+1 = 5, 기타는 실행만 = 1 이므로 chmod 751 test.txt 가 된다.",
+    "difficulty": 3,
+    "verificationStatus": "single_source",
+    "verificationCount": 1,
+    "basedOn": null,
+    "active": true
+  },
+  {
+    "id": "2023-3-004",
+    "sourceType": "past_exam",
+    "sourceLabel": "2023년 3회 실기 복원 (newbt.kr 문제은행)",
+    "sourceUrls": [
+      "https://newbt.kr/시험/정보처리기사 실기/2023%EB%85%84+3%ED%9A%8C/%EC%98%A4%EC%86%8C%ED%94%84%ED%8A%B80506",
+      "https://newbt.kr/문제/56534"
+    ],
+    "year": 2023,
+    "round": 3,
+    "category": "programming_language",
+    "subcategory": null,
+    "questionType": "term",
+    "question": "다음은 C 언어 코드이다. 알맞는 출력 결과를 작성하시오.",
+    "code": null,
+    "codeLang": null,
+    "image": "/question-images/2023-3-004.png",
+    "answer": [
+      "34"
+    ],
+    "acceptedAnswers": [],
+    "choices": null,
+    "hint": null,
+    "caseSensitive": false,
+    "orderSensitive": false,
+    "explanation": "test()는 완전수를 판정하는 함수다. 1부터 n/2까지 약수를 모두 더한 값이 n과 같으면 1을 돌려준다. main은 2부터 100까지 돌며 완전수인 것만 더하는데, 100 이하의 완전수는 6(1+2+3)과 28(1+2+4+7+14) 두 개뿐이다. 따라서 6 + 28 = 34 가 출력된다.",
+    "difficulty": 3,
+    "verificationStatus": "single_source",
+    "verificationCount": 1,
+    "basedOn": null,
+    "active": true
+  },
+  {
+    "id": "2023-3-005",
+    "sourceType": "past_exam",
+    "sourceLabel": "2023년 3회 실기 복원 (newbt.kr 문제은행)",
+    "sourceUrls": [
+      "https://newbt.kr/시험/정보처리기사 실기/2023%EB%85%84+3%ED%9A%8C/%EC%98%A4%EC%86%8C%ED%94%84%ED%8A%B80506",
+      "https://newbt.kr/문제/56474"
+    ],
+    "year": 2023,
+    "round": 3,
+    "category": "programming_language",
+    "subcategory": "C 언어 구조체",
+    "questionType": "term",
+    "question": "C언어에서 구조체의 멤버에 접근하기 위해 괄호안의 '기호'를 작성하시오.",
+    "code": "[출력결과]\n10\n10",
+    "codeLang": null,
+    "image": "/question-images/2023-3-005.png",
+    "answer": [
+      "→"
+    ],
+    "acceptedAnswers": [
+      "->",
+      "- >",
+      "화살표 연산자",
+      "arrow operator"
+    ],
+    "choices": null,
+    "hint": null,
+    "caseSensitive": false,
+    "orderSensitive": false,
+    "explanation": "화살표 연산자 -> 다. 구조체 변수에서 멤버를 꺼낼 때는 점(.)을 쓰지만, 구조체를 가리키는 포인터에서 꺼낼 때는 -> 를 쓴다. p->x 는 (*p).x 와 같은 뜻이며, 포인터를 먼저 역참조하고 멤버에 접근하는 과정을 짧게 쓴 것이다.",
+    "difficulty": 3,
+    "verificationStatus": "single_source",
+    "verificationCount": 1,
+    "basedOn": null,
+    "active": true
+  },
+  {
+    "id": "2023-3-006",
+    "sourceType": "past_exam",
+    "sourceLabel": "2023년 3회 실기 복원 (newbt.kr 문제은행)",
+    "sourceUrls": [
+      "https://newbt.kr/시험/정보처리기사 실기/2023%EB%85%84+3%ED%9A%8C/%EC%98%A4%EC%86%8C%ED%94%84%ED%8A%B80506",
+      "https://newbt.kr/문제/56475"
+    ],
+    "year": 2023,
+    "round": 3,
+    "category": "sql",
+    "subcategory": null,
+    "questionType": "term",
+    "question": "다음 빈칸에 들어갈 UNION 연산의 결과값을 작성하시오.",
+    "code": "[쿼리]\nSELECT A FROM  T1\nUNION\nSELECT A FROM  T2\nORDER BY A DESC;",
+    "codeLang": null,
+    "image": "/question-images/2023-3-006.png",
+    "answer": [
+      "4"
+    ],
+    "acceptedAnswers": [
+      "3",
+      "1"
+    ],
+    "choices": null,
+    "hint": null,
+    "caseSensitive": false,
+    "orderSensitive": false,
+    "explanation": "UNION은 두 결과를 합치면서 중복을 없앤다. T1과 T2가 모두 {3, 1, 4}라 합쳐도 3, 1, 4 세 행만 남는다. 여기에 ORDER BY A DESC 가 붙어 내림차순으로 정렬되므로 결과는 위에서부터 4, 3, 1 순이고 첫 칸에 오는 값은 4다. 중복을 그대로 두려면 UNION ALL을 쓴다.",
+    "difficulty": 3,
+    "verificationStatus": "single_source",
+    "verificationCount": 1,
+    "basedOn": null,
+    "active": true
+  },
+  {
+    "id": "2023-3-007",
+    "sourceType": "past_exam",
+    "sourceLabel": "2023년 3회 실기 복원 (newbt.kr 문제은행)",
+    "sourceUrls": [
+      "https://newbt.kr/시험/정보처리기사 실기/2023%EB%85%84+3%ED%9A%8C/%EC%98%A4%EC%86%8C%ED%94%84%ED%8A%B80506",
+      "https://newbt.kr/문제/56476"
+    ],
+    "year": 2023,
+    "round": 3,
+    "category": "security",
+    "subcategory": "접근통제 정책",
+    "questionType": "short_answer",
+    "question": "다음 설명은 서버 접근 통제의 유형이다. 괄호 안에 들어갈 용어를 작성하시오. \n('영어 약자'로 작성하시오.)",
+    "code": "- (   ①   )은/는 규칙 기반(Rule-Based) 접근통제 정책으로, 객체에 포함된 정보의 허용 등급과 접근 정보에 대하여 주체가 갖는 접근 허가 권한에 근거하여 객체에 대한 접근을 제한하는 방법이다.\n\n- (   ②   )은/는 중앙 관리자가 사용자와 시스템의 상호관계를 통제하며 조직 내 맡은 역할(Role)에 기초하여 자원에 대한 접근을 제한하는 방법이다.\n\n- (   ③   )은/는 신분 기반(Identity-Based) 접근통제 정책으로, 주체나 그룹의 신분에 근거하여 객체에 대한 접근을 제한하는 방법이다.",
+    "codeLang": null,
+    "image": null,
+    "answer": [
+      "MAC",
+      "RBAC",
+      "DAC"
+    ],
+    "acceptedAnswers": [],
+    "choices": null,
+    "hint": null,
+    "caseSensitive": false,
+    "orderSensitive": true,
+    "explanation": "① MAC(Mandatory Access Control, 강제적 접근통제)은 관리자가 정한 보안 등급에 따라 규칙으로 접근을 통제한다. ② RBAC(Role Based Access Control)은 사람이 아니라 맡은 역할에 권한을 주고 사람은 역할을 통해 접근한다. ③ DAC(Discretionary Access Control, 임의적 접근통제)은 자원 소유자가 신분을 보고 직접 권한을 준다. 규칙 기반=MAC, 역할 기반=RBAC, 신분 기반=DAC로 묶어 외운다.",
+    "difficulty": 3,
+    "verificationStatus": "single_source",
+    "verificationCount": 1,
+    "basedOn": null,
+    "active": true
+  },
+  {
+    "id": "2023-3-008",
+    "sourceType": "past_exam",
+    "sourceLabel": "2023년 3회 실기 복원 (newbt.kr 문제은행)",
+    "sourceUrls": [
+      "https://newbt.kr/시험/정보처리기사 실기/2023%EB%85%84+3%ED%9A%8C/%EC%98%A4%EC%86%8C%ED%94%84%ED%8A%B80506",
+      "https://newbt.kr/문제/56535"
+    ],
+    "year": 2023,
+    "round": 3,
+    "category": "programming_language",
+    "subcategory": null,
+    "questionType": "term",
+    "question": "다음 C언어 코드에 알맞는 출력값을 작성하시오.",
+    "code": null,
+    "codeLang": null,
+    "image": "/question-images/2023-3-008.png",
+    "answer": [
+      "5040"
+    ],
+    "acceptedAnswers": [],
+    "choices": null,
+    "hint": null,
+    "caseSensitive": false,
+    "orderSensitive": false,
+    "explanation": "f(n)은 n이 1 이하이면 1을 돌려주고 그 외에는 n × f(n-1)을 계산하는 팩토리얼 함수다. f(7) = 7×6×5×4×3×2×1 = 5040 이다.",
+    "difficulty": 3,
+    "verificationStatus": "single_source",
+    "verificationCount": 1,
+    "basedOn": null,
+    "active": true
+  },
+  {
+    "id": "2023-3-009",
+    "sourceType": "past_exam",
+    "sourceLabel": "2023년 3회 실기 복원 (newbt.kr 문제은행)",
+    "sourceUrls": [
+      "https://newbt.kr/시험/정보처리기사 실기/2023%EB%85%84+3%ED%9A%8C/%EC%98%A4%EC%86%8C%ED%94%84%ED%8A%B80506",
+      "https://newbt.kr/문제/56478"
+    ],
+    "year": 2023,
+    "round": 3,
+    "category": "app_sw_basics",
+    "subcategory": "비동기 전송 모드",
+    "questionType": "term",
+    "question": "다음 설명에 대해 괄호 안에 알맞는 용어를 작성하시오. \n('영어 약자' 로 작성하시오.)",
+    "code": "- (     )은/는 자료를 일정한 크기로 정하여 순서대로 전송하는 자료의 전송 방식이다.\n\n- 셀이라 부르는 고정 길이 패킷을 이용하여 처리가 단순하고 고속망에 적합하며, 연속적으로 셀을 보낼 때 다중화를 하지 않고 셀단위로 동기가 이루어지지만 경우에 따라 동기식 시간 분할 다중화를 사용하기도 한다.\n\n- 가상 채널 (Virtual Channel) 기반의 연결 지향 서비스로 셀이라 부르는 고정 길이(53바이트) 패킷을 사용하며 통계적 다중화 방식을 이용한다.",
+    "codeLang": null,
+    "image": null,
+    "answer": [
+      "ATM"
+    ],
+    "acceptedAnswers": [
+      "(Asynchronous Transfer Mode)"
+    ],
+    "choices": null,
+    "hint": null,
+    "caseSensitive": false,
+    "orderSensitive": false,
+    "explanation": "ATM(Asynchronous Transfer Mode)이다. 53바이트(헤더 5 + 페이로드 48) 고정 길이 셀로 잘라 보내기 때문에 처리 과정이 단순해 고속망에 적합하다. 가상 채널을 미리 설정하는 연결 지향 방식이며, 보낼 데이터가 있는 쪽에 더 많은 대역을 주는 통계적 다중화를 쓴다.",
+    "difficulty": 3,
+    "verificationStatus": "single_source",
+    "verificationCount": 1,
+    "basedOn": null,
+    "active": true
+  },
+  {
+    "id": "2023-3-010",
+    "sourceType": "past_exam",
+    "sourceLabel": "2023년 3회 실기 복원 (newbt.kr 문제은행)",
+    "sourceUrls": [
+      "https://newbt.kr/시험/정보처리기사 실기/2023%EB%85%84+3%ED%9A%8C/%EC%98%A4%EC%86%8C%ED%94%84%ED%8A%B80506",
+      "https://newbt.kr/문제/56479"
+    ],
+    "year": 2023,
+    "round": 3,
+    "category": "programming_language",
+    "subcategory": "C 언어",
+    "questionType": "short_answer",
+    "question": "다음은 C언어의 포인터 문제이다. 알맞는 출력값을 작성하시오.",
+    "code": null,
+    "codeLang": null,
+    "image": "/question-images/2023-3-010.png",
+    "answer": [
+      "KOREA\nOREA\nK\nE\nO"
+    ],
+    "acceptedAnswers": [
+      "KOREA OREA K E O",
+      "KOREAOREAKEO"
+    ],
+    "choices": null,
+    "hint": null,
+    "caseSensitive": false,
+    "orderSensitive": false,
+    "explanation": "포인터 연산과 서식 문자를 함께 묻는 문제다. %s는 문자열 전체를 찍으므로 p는 KOREA, p+1은 한 글자 뒤부터인 OREA가 나온다. %c는 한 글자만 찍으므로 *p는 K, *(p+3)은 E다. 마지막 *p+4 는 포인터를 옮긴 것이 아니라 문자 K의 값에 4를 더한 것이라 네 칸 뒤 문자인 O가 된다. *(p+4)와 *p+4 의 차이가 핵심이다.",
+    "difficulty": 3,
+    "verificationStatus": "single_source",
+    "verificationCount": 1,
+    "basedOn": null,
+    "active": true
+  },
+  {
+    "id": "2023-3-011",
+    "sourceType": "past_exam",
+    "sourceLabel": "2023년 3회 실기 복원 (newbt.kr 문제은행)",
+    "sourceUrls": [
+      "https://newbt.kr/시험/정보처리기사 실기/2023%EB%85%84+3%ED%9A%8C/%EC%98%A4%EC%86%8C%ED%94%84%ED%8A%B80506",
+      "https://newbt.kr/문제/56536"
+    ],
+    "year": 2023,
+    "round": 3,
+    "category": "programming_language",
+    "subcategory": "자바 오버라이딩",
+    "questionType": "term",
+    "question": "다음 Java 코드에 대한 알맞는 출력값을 작성하시오.",
+    "code": null,
+    "codeLang": null,
+    "image": "/question-images/2023-3-011.png",
+    "answer": [
+      "2"
+    ],
+    "acceptedAnswers": [],
+    "choices": null,
+    "hint": null,
+    "caseSensitive": false,
+    "orderSensitive": false,
+    "explanation": "Parent 타입 변수가 Child 객체를 가리키므로 재귀 안에서 부르는 compute()도 모두 Child의 것이다. Child는 compute(n-1) + compute(n-3)을 계산하고 n이 1 이하이면 n을 그대로 돌려주므로 음수도 그대로 반환된다. c(2) = c(1)+c(-1) = 0, c(3) = c(2)+c(0) = 0, c(4) = c(3)+c(1) = 1, c(5) = c(4)+c(2) = 1, c(6) = c(5)+c(3) = 1, c(7) = c(6)+c(4) = 2 가 되어 2가 출력된다.",
+    "difficulty": 3,
+    "verificationStatus": "single_source",
+    "verificationCount": 1,
+    "basedOn": null,
+    "active": true
+  },
+  {
+    "id": "2023-3-012",
+    "sourceType": "past_exam",
+    "sourceLabel": "2023년 3회 실기 복원 (newbt.kr 문제은행)",
+    "sourceUrls": [
+      "https://newbt.kr/시험/정보처리기사 실기/2023%EB%85%84+3%ED%9A%8C/%EC%98%A4%EC%86%8C%ED%94%84%ED%8A%B80506",
+      "https://newbt.kr/문제/56481"
+    ],
+    "year": 2023,
+    "round": 3,
+    "category": "security",
+    "subcategory": "NAT",
+    "questionType": "short_answer",
+    "question": "IP 패킷에서 외부의 공인 IP주소와 포트 주소에 해당하는 내부 IP주소를 재기록하여 라우터를 통해 네트워크 트래픽을 주고받는 기술은 무엇인가?",
+    "code": null,
+    "codeLang": null,
+    "image": null,
+    "answer": [
+      "NAT(Network Address Translation)"
+    ],
+    "acceptedAnswers": [
+      "NAT",
+      "Network Address Translation",
+      "네트워크 주소 변환"
+    ],
+    "choices": null,
+    "hint": null,
+    "caseSensitive": false,
+    "orderSensitive": false,
+    "explanation": "NAT(Network Address Translation, 네트워크 주소 변환)다. 사설 IP를 쓰는 내부 호스트가 인터넷에 나갈 때 라우터가 출발지 주소를 공인 IP로 바꿔주고, 돌아오는 응답은 포트 번호로 구분해 원래 내부 호스트에게 전달한다. 덕분에 공인 IP 하나로 여러 대가 인터넷을 쓸 수 있어 IPv4 주소 고갈을 늦추는 역할을 한다.",
+    "difficulty": 3,
+    "verificationStatus": "cross_checked",
+    "verificationCount": 2,
+    "basedOn": null,
+    "active": true
+  },
+  {
+    "id": "2023-3-013",
+    "sourceType": "past_exam",
+    "sourceLabel": "2023년 3회 실기 복원 (newbt.kr 문제은행)",
+    "sourceUrls": [
+      "https://newbt.kr/시험/정보처리기사 실기/2023%EB%85%84+3%ED%9A%8C/%EC%98%A4%EC%86%8C%ED%94%84%ED%8A%B80506",
+      "https://newbt.kr/문제/56482"
+    ],
+    "year": 2023,
+    "round": 3,
+    "category": "programming_language",
+    "subcategory": null,
+    "questionType": "term",
+    "question": "다음 자바 코드를 실행할 경우 에러가 발생이 된다. \n에러가 발생하는 라인을 작성하시오.",
+    "code": null,
+    "codeLang": null,
+    "image": "/question-images/2023-3-013.png",
+    "answer": [
+      "7"
+    ],
+    "acceptedAnswers": [],
+    "choices": null,
+    "hint": null,
+    "caseSensitive": false,
+    "orderSensitive": false,
+    "explanation": "static 메서드는 객체가 없어도 호출될 수 있으므로 특정 객체에 딸린 인스턴스 변수를 쓸 수 없다. get()이 static인데 인스턴스 변수 name을 반환하려 하는 7번 줄에서 컴파일 오류가 난다. 고치려면 get()에서 static을 떼거나 name을 static으로 선언해야 한다.",
+    "difficulty": 3,
+    "verificationStatus": "single_source",
+    "verificationCount": 1,
+    "basedOn": null,
+    "active": true
+  },
+  {
+    "id": "2023-3-014",
+    "sourceType": "past_exam",
+    "sourceLabel": "2023년 3회 실기 복원 (newbt.kr 문제은행)",
+    "sourceUrls": [
+      "https://newbt.kr/시험/정보처리기사 실기/2023%EB%85%84+3%ED%9A%8C/%EC%98%A4%EC%86%8C%ED%94%84%ED%8A%B80506",
+      "https://newbt.kr/문제/56483"
+    ],
+    "year": 2023,
+    "round": 3,
+    "category": "programming_language",
+    "subcategory": null,
+    "questionType": "term",
+    "question": "다음은 Python 프로그램에 대한 문제이다. \n빨간색 박스로 가려진 '예약어' 를 알맞게 작성하시오.\n(단, 첫 번째 라인의 '5 10'은 사용자로 부터 입력받은 값에 해당한다.)",
+    "code": "#실행결과\nx, y의 값을 공백으로 구분하여 입력: 5 10\nx의 값: 5\ny의 값: 10",
+    "codeLang": null,
+    "image": "/question-images/2023-3-014.png",
+    "answer": [
+      "split"
+    ],
+    "acceptedAnswers": [],
+    "choices": null,
+    "hint": null,
+    "caseSensitive": false,
+    "orderSensitive": false,
+    "explanation": "split()이다. input()으로 받은 \"5 10\"은 하나의 문자열이므로 공백을 기준으로 잘라 두 값으로 나눠야 한다. x, y = input().split() 형태로 쓰면 두 변수에 나눠 담기며, 숫자로 쓰려면 map(int, ...)를 함께 써야 한다.",
+    "difficulty": 3,
+    "verificationStatus": "single_source",
+    "verificationCount": 1,
+    "basedOn": null,
+    "active": true
+  },
+  {
+    "id": "2023-3-015",
+    "sourceType": "past_exam",
+    "sourceLabel": "2023년 3회 실기 복원 (newbt.kr 문제은행)",
+    "sourceUrls": [
+      "https://newbt.kr/시험/정보처리기사 실기/2023%EB%85%84+3%ED%9A%8C/%EC%98%A4%EC%86%8C%ED%94%84%ED%8A%B80506",
+      "https://newbt.kr/문제/56484"
+    ],
+    "year": 2023,
+    "round": 3,
+    "category": "requirements",
+    "subcategory": "UML",
+    "questionType": "term",
+    "question": "다음은 판매와 관련된 다이어그램이다. 해당 다이어그램의 명칭을 쓰시오.",
+    "code": null,
+    "codeLang": null,
+    "image": "/question-images/2023-3-015.png",
+    "answer": [
+      "패키지(Package)"
+    ],
+    "acceptedAnswers": [
+      "패키지",
+      "Package"
+    ],
+    "choices": null,
+    "hint": null,
+    "caseSensitive": false,
+    "orderSensitive": false,
+    "explanation": "패키지(Package) 다이어그램이다. 폴더 모양으로 패키지를 그리고 그 사이의 의존 관계를 점선 화살표로 나타내며, <<import>> 같은 스테레오타입으로 관계의 성격을 적는다. 시스템을 큰 덩어리로 나눠 구조를 보여줄 때 쓰는 구조 다이어그램이다.",
+    "difficulty": 3,
+    "verificationStatus": "single_source",
+    "verificationCount": 1,
+    "basedOn": null,
+    "active": true
+  },
+  {
+    "id": "2023-3-016",
+    "sourceType": "past_exam",
+    "sourceLabel": "2023년 3회 실기 복원 (newbt.kr 문제은행)",
+    "sourceUrls": [
+      "https://newbt.kr/시험/정보처리기사 실기/2023%EB%85%84+3%ED%9A%8C/%EC%98%A4%EC%86%8C%ED%94%84%ED%8A%B80506",
+      "https://newbt.kr/문제/56485"
+    ],
+    "year": 2023,
+    "round": 3,
+    "category": "programming_language",
+    "subcategory": "블랙박스 테스트",
+    "questionType": "term",
+    "question": "다음 설명에 알맞는 답을 보기에서 골라 '기호' 를 작성하시오.",
+    "code": "- 시스템이나 시스템 구성요소(component) 또는 소프트웨어 프로그램의 입력값과 출력값이 특정 그룹으로 분류되며, 분류된 그룹내의 값들이 시스템에 의해 동일하게 취급된다는 특성을 이용하여 시험하는 기법\n\n- 유사한 입력값들이 시스템을 거치면서 유사한 답변이 나온다는 것을 가정하여 테스트\n\n- 하나의 값은 그 분할 내 모든 값을 대표하는 것으로 간주하는 기법\n\n- 모든 입력 값을 시험할 필요가 없게 하여 시험을 효율적으로 수행하도록 지원\n\n- 일반적으로 경계값 분석기법(boundary value analysis)과 함께 테스트 케이스 도출하는데 사용",
+    "codeLang": null,
+    "image": "/question-images/2023-3-016.png",
+    "answer": [
+      "ㄱ"
+    ],
+    "acceptedAnswers": [],
+    "choices": null,
+    "hint": null,
+    "caseSensitive": false,
+    "orderSensitive": false,
+    "explanation": "동치 분할(Equivalence Partitioning) 기법이다. 같은 결과가 나올 입력들을 하나의 그룹으로 묶고 그룹마다 대표값 하나씩만 테스트한다. 모든 입력을 다 넣어볼 수 없으니 대표값으로 대신하는 것이며, 그룹의 경계와 그 앞뒤를 고르는 경계값 분석과 짝지어 쓰는 블랙박스 기법이다.",
+    "difficulty": 3,
+    "verificationStatus": "single_source",
+    "verificationCount": 1,
+    "basedOn": null,
+    "active": true
+  },
+  {
+    "id": "2023-3-017",
+    "sourceType": "past_exam",
+    "sourceLabel": "2023년 3회 실기 복원 (newbt.kr 문제은행)",
+    "sourceUrls": [
+      "https://newbt.kr/시험/정보처리기사 실기/2023%EB%85%84+3%ED%9A%8C/%EC%98%A4%EC%86%8C%ED%94%84%ED%8A%B80506",
+      "https://newbt.kr/문제/56486"
+    ],
+    "year": 2023,
+    "round": 3,
+    "category": "app_sw_basics",
+    "subcategory": "클라우드",
+    "questionType": "short_answer",
+    "question": "다음은 클라우드에 대한 유형 문제이다. \n괄호안에 알맞는 답을 보기에 골라 작성하시오.",
+    "code": "PaaS                 SaaS                  IaaS",
+    "codeLang": null,
+    "image": "/question-images/2023-3-017.png",
+    "answer": [
+      "laaS",
+      "PaaS",
+      "SaaS"
+    ],
+    "acceptedAnswers": [
+      "IaaS",
+      "Infrastructure as a Service",
+      "PaaS",
+      "SaaS"
+    ],
+    "choices": null,
+    "hint": null,
+    "caseSensitive": false,
+    "orderSensitive": true,
+    "explanation": "클라우드 서비스는 제공 범위에 따라 셋으로 나뉜다. ① IaaS는 서버·스토리지·네트워크 같은 인프라만 빌려주고 운영체제부터는 사용자가 관리한다. ② PaaS는 개발·실행 환경까지 제공해 사용자는 애플리케이션만 만들면 된다. ③ SaaS는 완성된 소프트웨어를 그대로 쓰게 해준다(구글 문서, 웹메일 등). 사용자가 관리할 범위가 IaaS에서 SaaS로 갈수록 줄어든다.",
+    "difficulty": 3,
+    "verificationStatus": "single_source",
+    "verificationCount": 1,
+    "basedOn": null,
+    "active": true
+  },
+  {
+    "id": "2023-3-018",
+    "sourceType": "past_exam",
+    "sourceLabel": "2023년 3회 실기 복원 (newbt.kr 문제은행)",
+    "sourceUrls": [
+      "https://newbt.kr/시험/정보처리기사 실기/2023%EB%85%84+3%ED%9A%8C/%EC%98%A4%EC%86%8C%ED%94%84%ED%8A%B80506",
+      "https://newbt.kr/문제/56487"
+    ],
+    "year": 2023,
+    "round": 3,
+    "category": "app_sw_basics",
+    "subcategory": "라우팅_프로토콜",
+    "questionType": "term",
+    "question": "다음은 프로토콜 종류에 관한 설명이다. 알맞는 답을 작성하시오.",
+    "code": "- 최소 Hop count를 파악하여 라우팅하는 프로토콜이다.\n\n- 거리와 방향으로 길을 찾아가는 Distance Vector 다이나믹 프로토콜이다.\n\n- 최단거리 즉, Hop count가 적은 경로를 택하여 라우팅하는 프로토콜로 Routing Table에 인접 라우터 정보를 저장하여 경로를 결정한다.\n\n- 최대 Hop count는 15로 거리가 짧기 때문에 IGP로 많이 이용하는 프로토콜이다.",
+    "codeLang": null,
+    "image": null,
+    "answer": [
+      "RIP"
+    ],
+    "acceptedAnswers": [],
+    "choices": null,
+    "hint": null,
+    "caseSensitive": false,
+    "orderSensitive": false,
+    "explanation": "RIP(Routing Information Protocol)이다. 거리 벡터 방식이라 이웃 라우터에게 들은 정보만으로 경로를 정하며, 거리를 홉(hop) 수로만 재고 가장 적은 쪽을 고른다. 최대 홉이 15로 제한되어 규모가 큰 망에는 쓸 수 없고 작은 내부망(IGP)에서 쓴다. 링크 상태 방식인 OSPF와 대비해 외운다.",
+    "difficulty": 3,
+    "verificationStatus": "single_source",
+    "verificationCount": 1,
+    "basedOn": null,
+    "active": true
+  },
+  {
+    "id": "2023-3-019",
+    "sourceType": "past_exam",
+    "sourceLabel": "2023년 3회 실기 복원 (newbt.kr 문제은행)",
+    "sourceUrls": [
+      "https://newbt.kr/시험/정보처리기사 실기/2023%EB%85%84+3%ED%9A%8C/%EC%98%A4%EC%86%8C%ED%94%84%ED%8A%B80506",
+      "https://newbt.kr/문제/56488"
+    ],
+    "year": 2023,
+    "round": 3,
+    "category": "sql",
+    "subcategory": "관계 대수",
+    "questionType": "short_answer",
+    "question": "다음은 관계 대수에 대한 내용이다. \n보기에 알맞는 기호를 작성하시오.",
+    "code": "[보기]\nㄱ. σ              ㄴ.  π                   ㄷ.⋈                 ㄹ.÷\n***************************************************************************************\n\n1. JOIN :   (   ①   )\n\n2. PROJECT :   (   ②   )\n\n3. SELECT :   (   ③   )\n\n4. DIVISION :   (   ④   )",
+    "codeLang": null,
+    "image": null,
+    "answer": [
+      "ㄷ",
+      "ㄴ",
+      "ㄱ",
+      "ㄹ"
+    ],
+    "acceptedAnswers": [],
+    "choices": null,
+    "hint": null,
+    "caseSensitive": false,
+    "orderSensitive": true,
+    "explanation": "관계 대수 기호는 JOIN ⋈(ㄷ), PROJECT π(ㄴ), SELECT σ(ㄱ), DIVISION ÷(ㄹ)이다. σ는 조건에 맞는 행을 고르는 가로 방향 연산, π는 원하는 속성만 뽑는 세로 방향 연산이라는 점으로 구분하면 헷갈리지 않는다.",
+    "difficulty": 3,
+    "verificationStatus": "single_source",
+    "verificationCount": 1,
+    "basedOn": null,
+    "active": true
+  },
+  {
+    "id": "2023-3-020",
+    "sourceType": "past_exam",
+    "sourceLabel": "2023년 3회 실기 복원 (newbt.kr 문제은행)",
+    "sourceUrls": [
+      "https://newbt.kr/시험/정보처리기사 실기/2023%EB%85%84+3%ED%9A%8C/%EC%98%A4%EC%86%8C%ED%94%84%ED%8A%B80506",
+      "https://newbt.kr/문제/56489"
+    ],
+    "year": 2023,
+    "round": 3,
+    "category": "data_io",
+    "subcategory": "데이터베이스 키 무결성",
+    "questionType": "term",
+    "question": "다음은 데이터베이스에 관련된 문제이다. 괄호 안에 알맞는 답을 작성하시오.",
+    "code": "- (            ) 무결성은 관계 데이터베이스 관계 모델에서 2개의 관련 있던 관계 변수(테이블) 간의\n   일관성(데이터 무결성)을 말한다.\n\n- 종종 기본 키 또는 키가 아닌 후보 키와 외래 키의 조합으로 강제 적용된다.\n\n- 외래 키가 선언된 관계 변수의 외래 키를 구성하는 속성(열)의 값은 그 관계 변수의 부모가 되는 관계 변수의 기본 키 값 또는 기본 키가 아닌 후보 키 값으로 존재해야 한다.",
+    "codeLang": null,
+    "image": null,
+    "answer": [
+      "참조"
+    ],
+    "acceptedAnswers": [],
+    "choices": null,
+    "hint": null,
+    "caseSensitive": false,
+    "orderSensitive": false,
+    "explanation": "참조(Referential) 무결성이다. 외래키 값은 반드시 참조하는 테이블의 기본키(또는 후보키) 값으로 실제 존재해야 한다는 규칙이다. 없는 부서번호를 사원 테이블에 넣을 수 없게 막는 것이 그 예다. 기본키가 NULL·중복이면 안 된다는 개체 무결성과 짝지어 외운다.",
+    "difficulty": 3,
+    "verificationStatus": "single_source",
+    "verificationCount": 1,
+    "basedOn": null,
+    "active": true
+  }
+]

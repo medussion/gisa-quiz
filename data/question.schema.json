@@ -1,0 +1,100 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://local/gisa-quiz/question.schema.json",
+  "title": "정보처리기사 실기 문제",
+  "type": "array",
+  "items": { "$ref": "#/$defs/question" },
+  "$defs": {
+    "question": {
+      "type": "object",
+      "required": ["id", "sourceType", "category", "questionType", "question", "answer"],
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1,
+          "description": "전역 고유 ID. 기출은 '2024-2-013' 처럼 연도-회차-번호를 권장한다."
+        },
+        "sourceType": {
+          "enum": ["past_exam", "generated", "sample", "user"],
+          "description": "past_exam=실제 기출/복원, generated=AI 변형, sample=앱 확인용 자체 제작, user=사용자 자료"
+        },
+        "sourceLabel": { "type": "string", "description": "예: '2024년 2회 실기 복원'" },
+        "sourceUrls": {
+          "type": "array",
+          "items": { "type": "string", "format": "uri" },
+          "description": "공개 출처 URL. past_exam이면 반드시 남긴다."
+        },
+        "year": { "type": ["integer", "null"], "minimum": 2000, "maximum": 2100 },
+        "round": { "type": ["integer", "null"], "minimum": 1, "maximum": 4 },
+        "category": {
+          "enum": [
+            "requirements",
+            "data_io",
+            "integration",
+            "server_programming",
+            "interface",
+            "ui_design",
+            "testing",
+            "sql",
+            "security",
+            "programming_language",
+            "app_sw_basics",
+            "packaging",
+            "etc"
+          ],
+          "description": "Q-Net 실기 출제기준 12개 주요항목 + etc"
+        },
+        "subcategory": { "type": ["string", "null"] },
+        "questionType": {
+          "enum": ["short_answer", "term", "code_output", "sql", "descriptive", "multiple_choice"]
+        },
+        "question": { "type": "string", "minLength": 1 },
+        "code": { "type": ["string", "null"], "description": "코드/SQL/표 등 본문에 붙는 블록" },
+        "codeLang": { "type": ["string", "null"], "examples": ["c", "java", "python", "sql", "text"] },
+        "image": {
+          "type": ["string", "null"],
+          "description": "코드/그림이 이미지로만 있는 경우의 경로. public 폴더 기준 (예: /question-images/2025-2-009.png)"
+        },
+        "answer": {
+          "type": "array",
+          "minItems": 1,
+          "items": { "type": "string", "minLength": 1 },
+          "description": "빈칸이 여러 개면 순서대로 여러 개를 넣는다."
+        },
+        "acceptedAnswers": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "추가로 정답 처리할 표기(영문 표기, 축약형 등)"
+        },
+        "choices": {
+          "type": ["array", "null"],
+          "items": { "type": "string" },
+          "description": "객관식 보기. questionType이 multiple_choice면 2개 이상 필수."
+        },
+        "hint": {
+          "type": ["string", "null"],
+          "description": "풀이 화면의 '힌트 보기'에 쓰인다. 비우면 정답 모양(글자 수·첫 글자)으로 자동 생성된다."
+        },
+        "caseSensitive": { "type": "boolean", "default": false },
+        "orderSensitive": {
+          "type": "boolean",
+          "default": false,
+          "description": "answer가 여러 개일 때 순서를 지켜야 하는지"
+        },
+        "explanation": { "type": "string" },
+        "difficulty": { "type": "integer", "minimum": 1, "maximum": 5, "default": 3 },
+        "verificationStatus": {
+          "enum": ["unverified", "single_source", "cross_checked", "verified", "rejected"],
+          "default": "unverified"
+        },
+        "verificationCount": { "type": "integer", "minimum": 0, "default": 0 },
+        "basedOn": {
+          "type": ["string", "null"],
+          "description": "generated일 때 원본 문제 id"
+        },
+        "active": { "type": "boolean", "default": true }
+      }
+    }
+  }
+}

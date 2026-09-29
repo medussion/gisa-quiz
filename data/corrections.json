@@ -1,0 +1,229 @@
+{
+  "_readme": [
+    "수집한 기출에 대한 보정 기록입니다.",
+    "collect:parse 가 원문에서 문제를 다시 만들 때 이 파일을 마지막에 덮어씌우므로,",
+    "여기 적어둔 수정은 다시 파싱해도 살아남습니다.",
+    "patch 는 그 문항에 덮어쓸 필드이고, reason 에는 왜 고쳤는지를 반드시 남깁니다.",
+    "출처에 적힌 내용을 근거 없이 바꾸지 않습니다."
+  ],
+  "corrections": [
+    {
+      "id": "2020-4-008",
+      "reason": "2020-4-008 와 2023-3-012 가 다른 회차에 같은 문제로 다시 나왔고 정답이 같습니다. 서로 다른 복원본이 일치하므로 cross_checked 로 올립니다.",
+      "patch": {
+        "verificationStatus": "cross_checked",
+        "verificationCount": 2
+      }
+    },
+    {
+      "id": "2020-4-012",
+      "reason": "문제가 이상 현상 3가지를 쓰라고 하는데 출처의 정답에는 '삽입 이상' 하나만 있었습니다. 데이터베이스 이상 현상은 삽입·삭제·갱신 이상 세 가지로 교재에 고정되어 있으므로 세 칸으로 채웁니다.",
+      "patch": {
+        "answer": [
+          "삽입 이상",
+          "삭제 이상",
+          "갱신 이상"
+        ],
+        "acceptedAnswers": [
+          "Insertion Anomaly",
+          "Deletion Anomaly",
+          "Update Anomaly",
+          "삽입",
+          "삭제",
+          "갱신"
+        ],
+        "orderSensitive": false
+      }
+    },
+    {
+      "id": "2021-3-015",
+      "reason": "그림을 보고 답하라는데 그림이 없습니다. 그대로는 풀 수 없어 출제에서 뺍니다.",
+      "patch": {
+        "verificationStatus": "rejected",
+        "active": false
+      }
+    },
+    {
+      "id": "2022-1-013",
+      "reason": "SQL문에 빈칸이 (1)(2)(3) 세 개인데 출처의 정답이 'ORDER, 점수, DESC' 한 덩어리로 적혀 있어 빈칸 하나로 채점되고 있었습니다. 내용은 그대로 두고 세 칸으로 나눕니다.",
+      "patch": {
+        "answer": [
+          "ORDER",
+          "점수",
+          "DESC"
+        ],
+        "acceptedAnswers": [
+          "ORDER BY",
+          "desc",
+          "내림차순"
+        ],
+        "orderSensitive": true
+      }
+    },
+    {
+      "id": "2022-2-002",
+      "reason": "문제는 1번과 2번 두 개를 묻는데 출처의 정답에는 '1.IDEA' 만 있었습니다. 2번 설명(NSA의 클리퍼 칩, 64비트 블록, 80비트 키, 32라운드)은 SKIPJACK을 가리키는 것이 분명하므로 두 칸으로 채웁니다.",
+      "patch": {
+        "answer": [
+          "IDEA",
+          "SKIPJACK"
+        ],
+        "acceptedAnswers": [
+          "스킵잭",
+          "아이디어"
+        ],
+        "orderSensitive": true
+      }
+    },
+    {
+      "id": "2022-2-010",
+      "reason": "문제는 1번과 2번 두 개를 묻는데 출처의 정답에는 '베타' 만 있었습니다. 2번 설명(개발 회사 내부에서 이뤄지는 첫 번째 테스트)은 알파 테스트의 정의 그대로이므로 두 칸으로 채웁니다.",
+      "patch": {
+        "answer": [
+          "베타",
+          "알파"
+        ],
+        "acceptedAnswers": [
+          "베타 테스트",
+          "알파 테스트",
+          "Beta",
+          "Alpha"
+        ],
+        "orderSensitive": true
+      }
+    },
+    {
+      "id": "2022-3-002",
+      "reason": "표에 기호를 넣을 칸이 5개(합집합·차집합·카티션 프로덕트·프로젝트·조인)인데 출처의 정답에는 'U' 하나만 있었습니다. 나머지는 관계 대수의 표준 기호가 정해져 있으므로 다섯 칸으로 채웁니다.",
+      "patch": {
+        "answer": [
+          "∪",
+          "−",
+          "×",
+          "π",
+          "⋈"
+        ],
+        "acceptedAnswers": [
+          "U",
+          "합집합",
+          "-",
+          "차집합",
+          "X",
+          "카티션 프로덕트",
+          "프로젝트",
+          "조인"
+        ],
+        "orderSensitive": true
+      }
+    },
+    {
+      "id": "2022-3-015",
+      "reason": "출처의 정답이 '[아래 모두 답]' 이라는 메모만 남아 실제 답이 비어 있었습니다. 문제 설명(한 번 로그인으로 여러 시스템을 이용하는 통합 인증)은 SSO를 가리키는 것이 분명하므로 채워 넣습니다.",
+      "patch": {
+        "answer": [
+          "SSO"
+        ],
+        "acceptedAnswers": [
+          "Single Sign-On",
+          "통합 인증",
+          "싱글 사인온"
+        ]
+      }
+    },
+    {
+      "id": "2023-2-002",
+      "reason": "코드에 빈칸이 a·b·c·d 네 개인데 출처의 정답에는 'm / 1000' 하나만 있었습니다. 문제의 주석(천원 4장, 오백원 1개, 백원 1개, 십원 2개)과 4620원이라는 값에서 나머지 세 칸이 일의적으로 정해지므로 네 칸으로 채웁니다.",
+      "patch": {
+        "answer": [
+          "m / 1000",
+          "m % 1000 / 500",
+          "m % 500 / 100",
+          "m % 100 / 10"
+        ],
+        "acceptedAnswers": [
+          "m/1000",
+          "m%1000/500",
+          "m%500/100",
+          "m%100/10"
+        ],
+        "orderSensitive": true
+      }
+    },
+    {
+      "id": "2023-3-005",
+      "reason": "C에서 포인터로 구조체 멤버에 접근하는 연산자는 화살표 모양 '->' 입니다. 출처 HTML이 이를 화살표 기호(→)로 표기해 두었으므로, 실제 코드 표기인 '->' 도 정답으로 인정되게 허용 답에 넣습니다.",
+      "patch": {
+        "acceptedAnswers": [
+          "->",
+          "- >",
+          "화살표 연산자",
+          "arrow operator"
+        ]
+      }
+    },
+    {
+      "id": "2023-3-012",
+      "reason": "출처의 정답이 'NAT(Network Address Transformation)' 인데 NAT 의 정식 명칭은 Network Address Translation 입니다(RFC 3022 'Traditional IP Network Address Translator'). 같은 문제가 2020년 4회 8번에도 나왔고 거기에는 Translation 으로 적혀 있습니다. 핵심 정답 'NAT' 는 그대로 두고 괄호 안 풀이만 바로잡습니다. / 2020-4-008 와 2023-3-012 가 다른 회차에 같은 문제로 다시 나왔고 정답이 같습니다. 서로 다른 복원본이 일치하므로 cross_checked 로 올립니다.",
+      "source": "https://www.rfc-editor.org/rfc/rfc3022",
+      "patch": {
+        "answer": [
+          "NAT(Network Address Translation)"
+        ],
+        "acceptedAnswers": [
+          "NAT",
+          "Network Address Translation",
+          "네트워크 주소 변환"
+        ],
+        "verificationStatus": "cross_checked",
+        "verificationCount": 2
+      }
+    },
+    {
+      "id": "2023-3-017",
+      "reason": "출처의 정답 첫 항목이 'laaS'(소문자 L)로 적혀 있는데 클라우드 서비스 모델의 정식 표기는 IaaS(Infrastructure as a Service)입니다. 대문자 I 표기도 정답으로 인정되도록 허용 답에 넣습니다.",
+      "patch": {
+        "acceptedAnswers": [
+          "IaaS",
+          "Infrastructure as a Service",
+          "PaaS",
+          "SaaS"
+        ]
+      }
+    },
+    {
+      "id": "2024-1-009",
+      "reason": "출처의 정답이 ': 6' 처럼 문제의 '(1) LRU :' 표기에서 콜론이 딸려 들어왔습니다. 값 자체는 그대로 두고 앞의 콜론만 떼어 채점되게 합니다.",
+      "patch": {
+        "answer": [
+          "6",
+          "6"
+        ],
+        "acceptedAnswers": [
+          "6회",
+          "6번"
+        ]
+      }
+    },
+    {
+      "id": "2024-3-009",
+      "reason": "문제는 ①②③ 세 개를 묻는데 출처의 정답에는 ① 하나만 적혀 있었습니다. ②와 ③은 문제에 적힌 정의가 교재의 분기(결정) 커버리지·조건 커버리지 정의와 그대로 일치하므로 빈칸 세 개로 채워 문제를 풀 수 있게 합니다.",
+      "patch": {
+        "answer": [
+          "㉥ 문장 커버리지",
+          "㉣ 분기 커버리지",
+          "㉢ 조건 커버리지"
+        ],
+        "acceptedAnswers": [
+          "㉥",
+          "㉣",
+          "㉢",
+          "문장 커버리지",
+          "분기 커버리지",
+          "결정 커버리지",
+          "조건 커버리지"
+        ],
+        "orderSensitive": true
+      }
+    }
+  ]
+}

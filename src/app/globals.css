@@ -1,0 +1,127 @@
+@import 'tailwindcss';
+
+@theme {
+  --font-sans:
+    -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', 'Pretendard', 'Noto Sans KR',
+    system-ui, sans-serif;
+  --font-mono: 'SF Mono', ui-monospace, 'Menlo', 'D2Coding', 'Consolas', monospace;
+}
+
+:root {
+  --bg: #f6f7f9;
+  --surface: #ffffff;
+  --surface-2: #f0f2f5;
+  --border: #dfe3e8;
+  --text: #16191d;
+  --text-dim: #626b76;
+  --accent: #2563eb;
+  --ok: #128a4a;
+  --ok-bg: #e7f6ed;
+  --bad: #c92a2a;
+  --bad-bg: #fdecec;
+  --warn: #9a6700;
+  --warn-bg: #fff6e0;
+  --code-bg: #1e2228;
+  --code-text: #e6edf3;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0f1115;
+    --surface: #171a20;
+    --surface-2: #1e222a;
+    --border: #2a2f39;
+    --text: #e7eaee;
+    --text-dim: #9aa3b0;
+    --accent: #5b8cff;
+    --ok: #4ade80;
+    --ok-bg: #12301f;
+    --bad: #ff7b72;
+    --bad-bg: #3a1a18;
+    --warn: #e3b341;
+    --warn-bg: #3a2e12;
+    --code-bg: #0b0d11;
+    --code-text: #e6edf3;
+  }
+}
+
+html,
+body {
+  background: var(--bg);
+  color: var(--text);
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: var(--font-sans);
+  /* 아이폰 홈 인디케이터 영역 확보 */
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+/* 입력창 확대 방지를 위해 iOS에서 16px 이상을 유지한다 */
+input,
+textarea,
+select,
+button {
+  font: inherit;
+  font-size: 16px;
+}
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+}
+
+.code-block {
+  background: var(--code-bg);
+  color: var(--code-text);
+  font-family: var(--font-mono);
+  font-size: 13.5px;
+  line-height: 1.55;
+  border-radius: 10px;
+  padding: 12px 14px;
+  overflow-x: auto;
+  white-space: pre;
+  tab-size: 4;
+}
+
+.field {
+  background: var(--surface-2);
+  border: 1.5px solid var(--border);
+  border-radius: 10px;
+  color: var(--text);
+  width: 100%;
+  padding: 12px 14px;
+  outline: none;
+}
+
+.field:focus {
+  border-color: var(--accent);
+}
+
+.btn {
+  border-radius: 10px;
+  padding: 13px 16px;
+  font-weight: 600;
+  border: 1px solid var(--border);
+  background: var(--surface-2);
+  color: var(--text);
+  cursor: pointer;
+  transition: opacity 0.12s ease;
+}
+
+.btn:active {
+  opacity: 0.7;
+}
+
+.btn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.btn-primary {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+}

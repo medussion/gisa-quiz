@@ -1,0 +1,17 @@
+node_modules/
+.next/
+out/
+*.tsbuildinfo
+next-env.d.ts
+.env
+data/app.db
+data/app.db-*
+data/rejected/*.json
+!data/rejected/.gitkeep
+.DS_Store
+
+# 수집한 원문 HTML은 용량이 커서 커밋하지 않는다 (npm run collect:fetch 로 다시 받는다)
+data/raw/**/*.html
+
+# Claude Code 로컬 설정 (개인 설정이라 공유하지 않는다)
+.claude/settings.local.json
